@@ -1159,8 +1159,10 @@ public class Main {
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
+                        jumlah_data = 0;
                     }
                 }
+                
                 case "2", "Obat Kapsul" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
@@ -1241,6 +1243,7 @@ public class Main {
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
+                        jumlah_data = 0;
                     }
                 }
                 
@@ -1324,6 +1327,7 @@ public class Main {
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
+                        jumlah_data = 0;
                     }
                 }
                 
