@@ -183,7 +183,7 @@ public class Main {
         alamat = input.readLine();
         System.out.print("  Email    : ");
         email = input.readLine();
-        boolean isValidInput = false;
+        boolean isValidInput;
         do {
             try {
               System.out.print("  Age      : ");
@@ -620,6 +620,7 @@ public class Main {
     
     public static void updateData() throws IOException {
         String pilihtipe = "a", kode;
+        boolean ditemukan = false;
 
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
@@ -639,14 +640,14 @@ public class Main {
                 case "1", "Obat Cair", "obat cair" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                        O========================================O
+                        |               Data Is Empty            |
+                        O========================================O""");
                     } else {
                         System.out.println("""
-                                        O========================================O
-                                        |                 Obat Cair              |
-                                        O========================================O""");
+                        O========================================O
+                        |                 Obat Cair              |
+                        O========================================O""");
                         for (int i = 0; i < cair.size(); i++) {
                             System.out.print("[" + (i + 1) + "] ");
                             cair.get(i).tampil();
@@ -700,9 +701,16 @@ public class Main {
                                       isValidInput = false;
                                     }
                                 } while (!isValidInput);
-                                
-                            
+                                ditemukan = true;
                             } 
+                        }
+                        if (ditemukan == false){
+                            System.out.println("""
+                            O========================================O
+                            |             Data Not Exist             |
+                            O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
                         }
                     }
                     break;
@@ -772,8 +780,16 @@ public class Main {
                                       isValidInput = false;
                                     }
                                 } while (!isValidInput);
-                               
+                                ditemukan = true;
                             }
+                        }
+                        if (ditemukan == false){
+                            System.out.println("""
+                            O========================================O
+                            |             Data Not Exist             |
+                            O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
                         }
                     }
                     break;
@@ -843,7 +859,16 @@ public class Main {
                                       isValidInput = false;
                                     }
                                 } while (!isValidInput);
+                                ditemukan = true;
                             }
+                        }
+                        if (ditemukan == false){
+                            System.out.println("""
+                            O========================================O
+                            |             Data Not Exist             |
+                            O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
                         }
                     }
                     break;
@@ -856,9 +881,9 @@ public class Main {
 
                 default -> {
                     System.out.println("""
-                                          O========================================O
-                                          |              Menu Not Exist!!          |
-                                          O========================================O""");
+                    O========================================O
+                    |              Menu Not Exist!!          |
+                    O========================================O""");
                     break;
                 }
             }
@@ -867,6 +892,7 @@ public class Main {
 
     public static void deleteData() throws IOException {
         String pilihtipe = "a";
+        boolean ditemukan = false;
 
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
@@ -894,9 +920,9 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         } else {
                             System.out.println("""
-                                            O========================================O
-                                            |                 Obat Cair              |
-                                            O========================================O""");
+                            O========================================O
+                            |                 Obat Cair              |
+                            O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
                                 cair.get(i).tampil();
@@ -913,16 +939,17 @@ public class Main {
                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
-                                    break;
-                                } else {
-                                    System.out.println("""
-                                   O========================================O
-                                   |             Data Not Exist             |
-                                   O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    break;
+                                    ditemukan = true;
                                 }
+                            }
+                            
+                            if (ditemukan == false){
+                                System.out.println("""
+                                O========================================O
+                                |             Data Not Exist             |
+                                O========================================O""");
+                                System.out.print("Press [enter] to continue...");
+                                new java.util.Scanner(System.in).nextLine();
                             }
                         }
                         break;
@@ -955,16 +982,17 @@ public class Main {
                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
-                                    break;
-                                } else {
-                                    System.out.println("""
-                                   O========================================O
-                                   |             Data Not Exist             |
-                                   O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    break;
+                                    ditemukan = true;
                                 }
+                            }
+                            
+                            if (ditemukan == false){
+                                System.out.println("""
+                                O========================================O
+                                |             Data Not Exist             |
+                                O========================================O""");
+                                System.out.print("Press [enter] to continue...");
+                                new java.util.Scanner(System.in).nextLine();
                             }
                         }
                         break;
@@ -978,9 +1006,9 @@ public class Main {
                             O========================================O""");
                         } else {
                             System.out.println("""
-                                            O========================================O
-                                            |                 Obat Pil               |
-                                            O========================================O""");
+                            O========================================O
+                            |                 Obat Pil               |
+                            O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
                                 pil.get(i).tampil();
@@ -997,16 +1025,17 @@ public class Main {
                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
-                                    break;
-                                } else {
-                                    System.out.println("""
-                                   O========================================O
-                                   |             Data Not Exist             |
-                                   O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    break;
+                                    ditemukan = true;
                                 }
+                            }
+                            
+                            if (ditemukan == false){
+                                System.out.println("""
+                                O========================================O
+                                |             Data Not Exist             |
+                                O========================================O""");
+                                System.out.print("Press [enter] to continue...");
+                                new java.util.Scanner(System.in).nextLine();
                             }
                         }
                         break;
@@ -1019,9 +1048,9 @@ public class Main {
 
                     default -> {
                         System.out.println("""
-                                          O========================================O
-                                          |              Menu Not Exist!!          |
-                                          O========================================O""");
+                        O========================================O
+                        |              Menu Not Exist!!          |
+                        O========================================O""");
                     break;
                     }
                 }
