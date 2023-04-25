@@ -196,7 +196,10 @@ public class Main {
               User addUser = new User(user, pass, alamat, email, age);
               dataUser.add(addUser);
             } catch (NumberFormatException e) {
-              System.out.println("Invalid input! Enter with number!");
+              System.out.println("""
+                                              O========================================O
+                                              |    Invalid input! Enter with number    |
+                                              O========================================O""");
               isValidInput = false;
             }
           } while (!isValidInput);
@@ -1124,7 +1127,7 @@ public class Main {
                                                             "Proses", jumlah, harga);
 
                                                     dataTransaksi.add(buy);
-                                                    ulang = "E";
+                                                    ulang = "0";
                                                 }
                                                 isValidInput1 = true;
                                             } catch (NumberFormatException e) {
@@ -1201,7 +1204,7 @@ public class Main {
                                                             "Proses", jumlah, harga);
 
                                                     dataTransaksi.add(buy);
-                                                    ulang = "E";
+                                                    ulang = "0";
                                                 }
                                                 isValidInput1 = true;
                                             } catch (NumberFormatException e) {
@@ -1278,7 +1281,7 @@ public class Main {
                                                         "Proses", jumlah, harga);
 
                                                 dataTransaksi.add(buy);
-                                                ulang = "E";
+                                                ulang = "0";
                                             }
                                             isValidInput1 = true;
                                     }catch (NumberFormatException e) {
