@@ -188,13 +188,17 @@ public class Main {
             try {
               System.out.print("  Age      : ");
               age = Integer.parseInt(input.readLine());
-              isValidInput = true;
-              System.out.println("""
-                                          O========================================O
-                                          |         Successful Registration        |
-                                          O========================================O""");
-              User addUser = new User(user, pass, alamat, email, age);
-              dataUser.add(addUser);
+              if (age < 1) {
+                throw new NumberFormatException();
+              } else {
+                  isValidInput = true;
+                System.out.println("""
+                                            O========================================O
+                                            |         Successful Registration        |
+                                            O========================================O""");
+                User addUser = new User(user, pass, alamat, email, age);
+                dataUser.add(addUser);
+              }
             } catch (NumberFormatException e) {
               System.out.println("""
                                                 O========================================O
@@ -302,12 +306,20 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              isValidInput = true;
+                              if (harga < 1) {
+                                throw new NumberFormatException();
+                              } else {
+                                  isValidInput = true;
+                              }
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  isValidInput = true;
+                                  if (stok < 1) {
+                                    throw new NumberFormatException();
+                                  } else {
+                                      isValidInput = true;
+                                  }
                                   ObatCair addCair = new ObatCair(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   cair.add(addCair);
                                   System.out.println("""
@@ -354,12 +366,20 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              isValidInput = true;
+                              if (harga < 1) {
+                                throw new NumberFormatException();
+                              } else {
+                                  isValidInput = true;
+                              }
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  isValidInput = true;
+                                  if (stok < 1) {
+                                    throw new NumberFormatException();
+                                  } else {
+                                      isValidInput = true;
+                                  }
                                   ObatKapsul addKapsul = new ObatKapsul(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   kapsul.add(addKapsul);
                                   System.out.println("""
@@ -405,12 +425,20 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              isValidInput = true;
+                              if (harga < 1) {
+                                throw new NumberFormatException();
+                              } else {
+                                  isValidInput = true;
+                              }
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  isValidInput = true;
+                                  if (stok < 1) {
+                                    throw new NumberFormatException();
+                                  } else {
+                                      isValidInput = true;
+                                  }
                                   ObatPil addPil = new ObatPil(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   pil.add(addPil);
                                   System.out.println("""
@@ -1052,8 +1080,7 @@ public class Main {
                     default -> {
                         System.out.println("""
                         O========================================O
-                        |              Menu Not Exist!!          |
-                        O========================================O""");
+                        |              Menu Not Exist!!          |""");
                     break;
                     }
                 }
@@ -1103,7 +1130,6 @@ public class Main {
                             try{
                                 System.out.print("  Input Number : ");
                                 int beli = Integer.parseInt(input.readLine());
-                                
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
@@ -1122,13 +1148,18 @@ public class Main {
                                             try{
                                                 System.out.print("  Jumlah pembelian   : ");
                                                 int jumlah = Integer.parseInt(input.readLine());
-                                                if (jumlah > cair.get(beli-1).stokObat || jumlah <= 0){
+                                                if (jumlah > cair.get(beli-1).stokObat){
                                                     System.out.println("""
                                                     O========================================O
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                     ulang = "a";
-
+                                                } else if (jumlah < cair.get(beli-1).stokObat){
+                                                    System.out.println("""
+                                                  O========================================O
+                                                  |    Invalid input! Enter with number    |
+                                                  O========================================O""");
+                                                    ulang = "a";
                                                 } else {
                                                     Transaksi buy = new Transaksi(kode, nama, 
                                                             Obat, DosisA, DosisD, 
@@ -1165,7 +1196,7 @@ public class Main {
                     }
                 }
                 
-                case "2", "Obat Kapsul" -> {
+                case "2", "Obat Kapsul", "obat kapsul" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                         O========================================O
@@ -1206,13 +1237,18 @@ public class Main {
                                             try{
                                                 System.out.print("  Jumlah pembelian   : ");
                                                 int jumlah = Integer.parseInt(input.readLine());
-                                                if (jumlah > kapsul.get(beli-1).stokObat || jumlah <= 0){
+                                                if (jumlah > kapsul.get(beli-1).stokObat){
                                                     System.out.println("""
                                                     O========================================O
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                     ulang = "a";
-
+                                                } else if (jumlah < kapsul.get(beli-1).stokObat){
+                                                    System.out.println("""
+                                                  O========================================O
+                                                  |    Invalid input! Enter with number    |
+                                                  O========================================O""");
+                                                    ulang = "a";
                                                 } else {
                                                     Transaksi buy = new Transaksi(kode, nama, 
                                                             Obat, DosisA, DosisD, 
@@ -1248,7 +1284,7 @@ public class Main {
                     }
                 }
                 
-                case "3", "Obat Pil" -> {
+                case "3", "Obat Pil", "obat pil" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -1290,11 +1326,17 @@ public class Main {
                                             try{
                                                 System.out.print("  Jumlah pembelian   : ");
                                                 int jumlah = Integer.parseInt(input.readLine());
-                                                if (jumlah > pil.get(beli-1).stokObat || jumlah <= 0){
+                                                if (jumlah > pil.get(beli-1).stokObat){
                                                     System.out.println("""
                                                             O========================================O
                                                             |               Stok Kurang              |
                                                             O========================================O""");
+                                                    ulang = "a";
+                                                } else if (jumlah < pil.get(beli-1).stokObat){
+                                                    System.out.println("""
+                                                  O========================================O
+                                                  |    Invalid input! Enter with number    |
+                                                  O========================================O""");
                                                     ulang = "a";
                                                 } else {
                                                     Transaksi buy = new Transaksi(kode, nama, 
