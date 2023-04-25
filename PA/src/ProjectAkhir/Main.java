@@ -196,10 +196,7 @@ public class Main {
               User addUser = new User(user, pass, alamat, email, age);
               dataUser.add(addUser);
             } catch (NumberFormatException e) {
-              System.out.println("""
-                                              O========================================O
-                                              |    Invalid input! Enter with number    |
-                                              O========================================O""");
+              System.out.println("Invalid input! Enter with number!");
               isValidInput = false;
             }
           } while (!isValidInput);
@@ -1347,8 +1344,20 @@ public class Main {
             System.out.println("    Total Harga   : Rp." + total);
             int bayar = 1;
             while(bayar < total){
-                System.out.println("    Input         : Rp.");
-                bayar = Integer.parseInt(input.readLine());
+                boolean isValidInput;
+                do{
+                    try{
+                        System.out.println("    Input         : Rp.");
+                        bayar = Integer.parseInt(input.readLine());
+                        isValidInput = true;
+                }catch (NumberFormatException e) {
+                        System.out.println("""
+                        O========================================O
+                        |    Invalid input! Enter with number    |
+                        O========================================O""");
+                        isValidInput = false;
+                    }
+                } while (!isValidInput);
                 if (bayar < total){
                     System.out.println("""
                     O========================================O
@@ -1356,6 +1365,7 @@ public class Main {
                     O========================================O""");
                 }
             }
+            
             for (int i = 0; i < dataTransaksi.size(); i++){
                 if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
                     for (ObatCair obatC : cair) {
