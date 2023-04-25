@@ -166,7 +166,7 @@ public class Main {
         }
         return false;
     }
-
+    
     public static void regis() throws IOException {
         String user, pass, alamat, email;
         int age;
@@ -186,28 +186,33 @@ public class Main {
         boolean isValidInput;
         do {
             try {
-              System.out.print("  Age      : ");
-              age = Integer.parseInt(input.readLine());
-              if (age < 1) {
-                throw new NumberFormatException();
-              } else {
-                isValidInput = true;
-                for (int i = 0; i < dataUser.size(); i++){
-                    
-                    // jika username dan password sudah digunakan maka tidak bisa regis
-                    if (dataUser.get(i).getUsername().equals(user) &&
-                            dataUser.get(i).getPassword().equals(pass)){
-                        System.out.println("Username/Password has been used!");
-                    } else {
-                        System.out.println("""
-                        O========================================O
-                        |         Successful Registration        |
-                        O========================================O""");
-                        User addUser = new User(user, pass, alamat, email, age);
-                        dataUser.add(addUser);
-                    }
+                System.out.print("  Age      : ");
+                age = Integer.parseInt(input.readLine());
+                if (age < 1) {
+                  throw new NumberFormatException();
+                } else {
+                  isValidInput = true;
+                  String ditemukan = "tidak";
+                  for (int i = 0; i < dataUser.size(); i++){
+
+                      // jika username dan password sudah digunakan maka tidak bisa regis
+                      if (dataUser.get(i).getUsername().equals(user) &&
+                              dataUser.get(i).getPassword().equals(pass)){
+                          ditemukan = "ditemukan";
+                      }
+                  }
+
+                  if (ditemukan.equals("ditemukan")){
+                      System.out.println("Username/Password has been used!");
+                  } else {
+                      System.out.println("""
+                      O========================================O
+                      |         Successful Registration        |
+                      O========================================O""");
+                      User addUser = new User(user, pass, alamat, email, age);
+                      dataUser.add(addUser);
+                  }
                 }
-              }
             } catch (NumberFormatException e) {
                 System.out.println("""
                 O========================================O
@@ -1431,108 +1436,133 @@ public class Main {
             System.out.print("    Input         : ");
             String pilihan = input.readLine();
             switch(pilihan){
-                
-            }
-            int bayar = 1;
-            while(bayar < total){
-                boolean isValidInput;
-                do{
-                    try{
-                        System.out.println("    Total Harga   : Rp." + total);
-                        System.out.print("    Input         : Rp.");
-                        bayar = Integer.parseInt(input.readLine());
-                        isValidInput = true;
-                }catch (NumberFormatException e) {
-                        System.out.println("""
-                        O========================================O
-                        |    Invalid input! Enter with number    |
-                        O========================================O""");
-                        isValidInput = false;
+                case "1", "Pembayaran" -> {
+                    int bayar = 1;
+                    while(bayar < total){
+                        boolean isValidInput;
+                        do{
+                            try{
+                                System.out.println("    Total Harga   : Rp." + total);
+                                System.out.print("    Input         : Rp.");
+                                bayar = Integer.parseInt(input.readLine());
+                                isValidInput = true;
+                            }catch (NumberFormatException e) {
+                                System.out.println("""
+                                O========================================O
+                                |    Invalid input! Enter with number    |
+                                O========================================O""");
+                                isValidInput = false;
+                            }
+                        } while (!isValidInput);
+                        if (bayar < total){
+                            System.out.println("""
+                            O========================================O
+                            |             Uang Anda Kurang!          |
+                            O========================================O""");
+                        }
                     }
-                } while (!isValidInput);
-                if (bayar < total){
+
+                    if (bayar >= total){
+                        // mengubah status transaksi menjadi sukses untuk obat cair
+                        for (int i = 0; i < dataTransaksi.size(); i++){
+                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
+                                for (ObatCair obatC : cair) {
+                                    if (obatC.getKode().equals(dataTransaksi.get(i).getKodeObat())){
+                                        int stok = obatC.getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        obatC.setStokObat(stok);
+                                        dataTransaksi.get(i).setStatus("Sukses");
+
+                                        // menghapus obat jika stok = 0
+                                        for (int j = 0; j < cair.size(); j++) {
+                                            if (cair.get(j).getKode().equals(obatC.getKode())) {
+                                                if (cair.get(j).getStokObat() == 0){
+                                                    cair.remove(j);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        // mengubah status transaksi menjadi sukses untuk obat kapsul
+                        for (int i = 0; i < dataTransaksi.size(); i++){
+                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
+                                for (ObatKapsul obatK : kapsul) {
+                                    if (obatK.getKode().equals(dataTransaksi.get(i).getKodeObat())){
+                                        int stok = obatK.getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        obatK.setStokObat(stok);
+                                        dataTransaksi.get(i).setStatus("Sukses");
+
+                                        // menghapus obat jika stok = 0
+                                        for (int j = 0; j < kapsul.size(); j++) {
+                                            if (kapsul.get(j).getKode().equals(obatK.getKode())) {
+                                                if (kapsul.get(j).getStokObat() == 0){
+                                                    kapsul.remove(j);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        // mengubah status transaksi menjadi sukses untuk obat pil
+                        for (int i = 0; i < dataTransaksi.size(); i++){
+                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
+                                for (ObatPil obatP : pil) {
+                                    if (obatP.getKode().equals(dataTransaksi.get(i).getKodeObat())){
+                                        int stok = obatP.getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        obatP.setStokObat(stok);
+                                        dataTransaksi.get(i).setStatus("Sukses");
+                                        
+                                        // menghapus obat jika stok = 0
+                                        for (int j = 0; j < pil.size(); j++) {
+                                            if (pil.get(j).getKode().equals(obatP.getKode())) {
+                                                if (pil.get(j).getStokObat() == 0){
+                                                    pil.remove(j);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        int kembali = bayar - total;
+                        System.out.println("O========================================O");
+                        System.out.println("    Kembalian     : Rp. " + kembali);
+                        System.out.println("O========================================O");
+                    }
+                }
+                
+                case "2", "Bersihkan Keranjang" -> {
+                    for(int i = 0; i < dataTransaksi.size();i++){
+                        if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
+                            if (dataTransaksi.get(i).getStatus() == "Proses"){
+                                dataTransaksi.remove(i);
+                            }
+                        }
+                    }
+                    System.out.println("Keranjang Telah Dibersihkan!");
+                }
+                
+                case "0", "Exit", "exit" -> {
+                }
+                
+                default -> {
                     System.out.println("""
                     O========================================O
-                    |             Uang Anda Kurang!          |
+                    |              Menu Not Exist!!          |
                     O========================================O""");
+                    System.out.print("Press [enter] to continue...");
+                    new java.util.Scanner(System.in).nextLine();
                 }
             }
             
-            if (bayar >= total){
-                // mengubah status transaksi menjadi sukses untuk obat cair
-                for (int i = 0; i < dataTransaksi.size(); i++){
-                    if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
-                        for (ObatCair obatC : cair) {
-                            if (obatC.getKode().equals(dataTransaksi.get(i).getKodeObat())){
-                                int stok = obatC.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                obatC.setStokObat(stok);
-                                dataTransaksi.get(i).setStatus("Sukses");
-                                
-                                // menghapus obat jika stok = 0
-                                for (int j = 0; j < cair.size(); j++) {
-                                    if (cair.get(j).getKode().equals(obatC.getKode())) {
-                                        if (cair.get(j).getStokObat() == 0){
-                                            cair.remove(j);
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-                
-                // mengubah status transaksi menjadi sukses untuk obat kapsul
-                for (int i = 0; i < dataTransaksi.size(); i++){
-                    if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
-                        for (ObatKapsul obatK : kapsul) {
-                            if (obatK.getKode().equals(dataTransaksi.get(i).getKodeObat())){
-                                int stok = obatK.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                obatK.setStokObat(stok);
-                                dataTransaksi.get(i).setStatus("Sukses");
-                                
-                                // menghapus obat jika stok = 0
-                                for (int j = 0; j < kapsul.size(); j++) {
-                                    if (kapsul.get(j).getKode().equals(obatK.getKode())) {
-                                        if (kapsul.get(j).getStokObat() == 0){
-                                            kapsul.remove(j);
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-                
-                // mengubah status transaksi menjadi sukses untuk obat pil
-                for (int i = 0; i < dataTransaksi.size(); i++){
-                    if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
-                        for (ObatPil obatP : pil) {
-                            if (obatP.getKode().equals(dataTransaksi.get(i).getKodeObat())){
-                                int stok = obatP.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                obatP.setStokObat(stok);
-                                dataTransaksi.get(i).setStatus("Sukses");
-                                
-                            // menghapus obat jika stok = 0
-                                for (int j = 0; j < pil.size(); j++) {
-                                    if (pil.get(j).getKode().equals(obatP.getKode())) {
-                                        if (pil.get(j).getStokObat() == 0){
-                                            pil.remove(j);
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-
-                int kembali = bayar - total;
-                System.out.println("O========================================O");
-                System.out.println("    Kembalian     : Rp. " + kembali);
-                System.out.println("O========================================O");
-            }
         } else {
             System.out.println("""
             O========================================O
@@ -1558,26 +1588,30 @@ public class Main {
                                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
-            if (null == pilih) {
+            String pilihan = pilih.toUpperCase();
+            if (null == pilihan) {
                 System.out.println("O========================================O");
                 System.out.println("|             Invalid choice             |");
                 System.out.println("O========================================O");
 
-            } else switch (pilih) {
-                case "1", "Update Profil", "update profil" -> {
+            } else switch (pilihan) {
+                case "1", "UPDATE PROFIL" -> {
                 }
-                case "2", "Beli Obat", "beli obat" -> {
+                
+                case "2", "BELI OBAT" -> {
                     pembelian();
                 }
-                case "3", "Keranjang Belanja", "keranjang belanja"-> {
+                
+                case "3", "KERANJANG BELANJA"-> {
                     keranjang();
                 }
-                case "0", "Log Out", "log out" -> {
+                
+                case "0", "LOG OUT" -> {
                     System.out.println("O========================================O");
                     System.out.println("|         Thank you for visiting         |");
                     System.out.println("O========================================O");
                     System.out.print("Press [enter] to continue...");
-                        new java.util.Scanner(System.in).nextLine();
+                    new java.util.Scanner(System.in).nextLine();
                 }
 
                 default -> {
