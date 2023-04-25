@@ -195,15 +195,14 @@ public class Main {
                   String ditemukan = "tidak";
                   for (int i = 0; i < dataUser.size(); i++){
 
-                      // jika username dan password sudah digunakan maka tidak bisa regis
-                      if (dataUser.get(i).getUsername().equals(user) &&
-                              dataUser.get(i).getPassword().equals(pass)){
+                      // jika username sudah digunakan maka tidak bisa regis
+                      if (dataUser.get(i).getUsername().equals(user)){
                           ditemukan = "ditemukan";
                       }
                   }
 
                   if (ditemukan.equals("ditemukan")){
-                      System.out.println("Username/Password has been used!");
+                      System.out.println("Username has been used!");
                   } else {
                       System.out.println("""
                       O========================================O
@@ -555,7 +554,8 @@ public class Main {
                 System.out.println("  Password           : " + dataUser.get(i).getPassword());
                 System.out.println("  Address            : " + dataUser.get(i).getAddress());
                 System.out.println("  Email              : " + dataUser.get(i).getEmail());
-                System.out.println("-------------------------------=----------");
+                System.out.println("  Age                : " + dataUser.get(i).getAge());
+                System.out.println("------------------------------------------");
             }
             System.out.println("O========================================O");
             System.out.print("Press [enter] to continue...");
@@ -1542,9 +1542,7 @@ public class Main {
                 case "2", "Bersihkan Keranjang" -> {
                     for(int i = 0; i < dataTransaksi.size();i++){
                         if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
-                            if (dataTransaksi.get(i).getStatus() == "Proses"){
-                                dataTransaksi.remove(i);
-                            }
+                            dataTransaksi.remove(i);
                         }
                     }
                     System.out.println("Keranjang Telah Dibersihkan!");
@@ -1574,6 +1572,62 @@ public class Main {
         new java.util.Scanner(System.in).nextLine();
     }
     
+    public static void updateProfil() throws IOException {
+        System.out.println("------------------------------------------");
+        for (int i = 1; i < dataUser.size(); i++) {
+            if (dataUser.get(i).getUsername().equals(userAktif)){
+                System.out.println("  Username           : " + dataUser.get(i).getUsername());
+                System.out.println("  Password           : " + dataUser.get(i).getPassword());
+                System.out.println("  Address            : " + dataUser.get(i).getAddress());
+                System.out.println("  Email              : " + dataUser.get(i).getEmail());
+                System.out.println("  Age                : " + dataUser.get(i).getAge());
+            }
+        }
+        System.out.println("------------------------------------------");
+        System.out.println("""
+                           [1] Edit Profil
+                           [0] Exit""");
+        System.out.println("------------------------------------------");
+        System.out.print("    Input : ");
+        String pilih = input.readLine();
+        String pilihan = pilih.toUpperCase();
+        switch (pilihan){
+            case "1" -> {
+                System.out.print("  Username           : ");
+                String userBaru = input.readLine();
+                System.out.print("  Password           : ");
+                String passBaru = input.readLine();
+                System.out.print("  Address            : ");
+                String alamatBaru = input.readLine();
+                System.out.print("  Email              : ");
+                String emailBaru = input.readLine();
+                System.out.print("  Age                : ");
+                int umurBaru = Integer.parseInt(input.readLine());
+                for (int i = 1; i < dataUser.size(); i++) {
+                    if (dataUser.get(i).getUsername().equals(userAktif)){
+                        dataUser.get(i).setUsername(userBaru);
+                        dataUser.get(i).setPassword(passBaru);
+                        dataUser.get(i).setAddress(alamatBaru);
+                        dataUser.get(i).setEmail(emailBaru);
+                        dataUser.get(i).setAge(umurBaru);
+                    }
+                }
+            }
+            
+            case "0" -> {
+            }
+            
+            default -> {
+                System.out.println("""
+                O========================================O
+                |              Menu Not Exist!!          |
+                O========================================O""");
+            }
+        }
+        System.out.print("Press [enter] to continue...");
+        new java.util.Scanner(System.in).nextLine();
+    }
+    
     public static void menuUser() throws IOException {
         String pilih = "a";
         while (!"0".equals(pilih)) {
@@ -1581,7 +1635,7 @@ public class Main {
                                O========================================O
                                |     Aplikasi Apotek Chemical Farma     |
                                O========================================O
-                               | 1. Update Profil                       |
+                               | 1. Profil                              |
                                | 2. Beli Obat                           |
                                | 3. Keranjang Belanja                   |
                                | 0. Log Out                             |
@@ -1596,6 +1650,7 @@ public class Main {
 
             } else switch (pilihan) {
                 case "1", "UPDATE PROFIL" -> {
+                    updateProfil();
                 }
                 
                 case "2", "BELI OBAT" -> {
