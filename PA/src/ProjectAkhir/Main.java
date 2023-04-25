@@ -1423,6 +1423,7 @@ public class Main {
                 int kembali = bayar - total;
                 System.out.println("O========================================O");
                 System.out.println("    Kembalian     : Rp. " + kembali);
+                System.out.println("O========================================O");
             }
         } else {
             System.out.println("""
