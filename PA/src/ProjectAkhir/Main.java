@@ -57,19 +57,21 @@ public class Main {
                                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
-            if (null == pilih) {
+            String pilihan = pilih.toUpperCase();
+            if (null == pilihan) {
                 System.out.println("O========================================O");
                 System.out.println("|             Invalid choice             |");
                 System.out.println("O========================================O");
                 System.out.print("Press [enter] to continue...");
                 new java.util.Scanner(System.in).nextLine();
             } else {
-                switch (pilih) {
+                switch (pilihan) {
 
-                    case "1", "Registration", "registration"->
+                    case "1", "REGISTRATION"-> {
                         regis();
-
-                    case "2", "Login", "login" -> {
+                        break;
+                    }
+                    case "2", "LOGIN" -> {
                         if (login() == true) {
                             System.out.println("");
                         } else {
@@ -82,7 +84,7 @@ public class Main {
                         break;
                     }
 
-                    case "0", "Exit", "exit" -> {
+                    case "0", "EXIT" -> {
                         System.out.println("O========================================O");
                         System.out.println("|         Thank you for visiting         |");
                         System.out.println("O========================================O");
@@ -90,9 +92,10 @@ public class Main {
                     }
 
                     default -> {
-                        System.out.println("O========================================O");
-                        System.out.println("|             Invalid choice             |");
-                        System.out.println("O========================================O");
+                        System.out.println("""
+                                          O========================================O
+                                          |              Menu Not Exist!!          |
+                                          O========================================O""");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     }
@@ -202,12 +205,12 @@ public class Main {
                   }
 
                   if (ditemukan.equals("ditemukan")){
+                      System.out.println("O========================================O");
                       System.out.println("Username has been used!");
                   } else {
                       System.out.println("""
                       O========================================O
-                      |         Successful Registration        |
-                      O========================================O""");
+                      |         Successful Registration        |""");
                       User addUser = new User(user, pass, alamat, email, age);
                       dataUser.add(addUser);
                   }
@@ -237,33 +240,35 @@ public class Main {
                                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
-            if (null == pilih) {
+            String pilihan = pilih.toUpperCase();
+            if (null == pilihan) {
                 System.out.println("O========================================O");
                 System.out.println("|             Invalid choice             |");
                 System.out.println("O========================================O");
                 System.out.print("Press [enter] to continue...");
                 new java.util.Scanner(System.in).nextLine();
             } else {
-                switch (pilih) {
+                switch (pilihan) {
 
-                    case "1", "Add Data", "add data" ->
+                    case "1", "ADD DATA" ->
                         createDataObat();
 
-                    case "2", "Read Data", "read data" ->
+                    case "2", "READ DATA" ->
                         readData();
 
-                    case "3", "Update Data", "update data" ->
+                    case "3", "UPDATE DATA" ->
                         updateData();
 
-                    case "4", "Delete Data", "delete data" ->
+                    case "4", "DELETE DATA" ->
                         deleteData();
 
-                    case "0", "Log Out", "log out" -> {
+                    case "0" -> {
                         System.out.println("O========================================O");
                         System.out.println("|         Thank you for visiting         |");
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
+                        break;
                     }
 
                     default -> {
@@ -295,12 +300,13 @@ public class Main {
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
 
             } else {
-                switch (pilihtipe) {
-                    case "1", "Obat Cair", "obat cair" -> {
+                switch (pilihan) {
+                    case "1", "OBAT CAIR" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -337,14 +343,12 @@ public class Main {
                                   cair.add(addCair);
                                   System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |
-                                          O========================================O""");
+                                          |         Data successfully added        |""");
                                   break;
                                 } catch (NumberFormatException e) {
                                     System.out.println("""
                                           O========================================O
-                                          |    Invalid input! Enter with number    |
-                                          O========================================O""");
+                                          |    Invalid input! Enter with number    |""");
                                   isValidInput = false;
                                 }
                               } while (!isValidInput); 
@@ -360,7 +364,7 @@ public class Main {
                         
                     }
 
-                    case "2", "Obat Kapsul", "obat kapsul" -> {
+                    case "2", "OBAT KAPSUL" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -397,8 +401,7 @@ public class Main {
                                   kapsul.add(addKapsul);
                                   System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |
-                                          O========================================O""");
+                                          |         Data successfully added        |""");
                                   break;
                                 } catch (NumberFormatException e) {
                                   System.out.println("""
@@ -419,7 +422,7 @@ public class Main {
                         
                     }
 
-                    case "3", "Obat Pil", "obat pil" -> {
+                    case "3", "OBAT PIL" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -456,8 +459,7 @@ public class Main {
                                   pil.add(addPil);
                                   System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |
-                                          O========================================O""");
+                                          |         Data successfully added        |""");
                                   break;
                                 } catch (NumberFormatException e) {
                                   System.out.println("""
@@ -508,18 +510,19 @@ public class Main {
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
 
             } else {
-                switch (pilihtipe) {
-                    case "1", "Read Data User", "read data user" ->
+                switch (pilihan) {
+                    case "1", "READ DATA USER" ->
                         readDataUser();
 
-                    case "2", "Read Data Obat", "read data obat" ->
+                    case "2", "READ DATA OBAT" ->
                         readDataObat();
 
-                    case "0", "Exit", "exit" -> {
+                    case "0", "EXIT" -> {
                         System.out.println("");
                         break;
                     }
@@ -578,10 +581,11 @@ public class Main {
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
-            } else switch (pilihtipe) {
-                case "1", "Obat Cair", "obat cair" -> {
+            } else switch (pilihan) {
+                case "1", "OBAT CAIR"-> {
                     if (cair.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -604,7 +608,7 @@ public class Main {
                         new java.util.Scanner(System.in).nextLine();
                     }
                 }
-                case "2", "Obat Kapsul" -> {
+                case "2", "OBAT KAPSUL" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -626,7 +630,7 @@ public class Main {
                         new java.util.Scanner(System.in).nextLine();
                     }
                 }
-                case "3", "Obat Pil", "obat pil" -> {
+                case "3", "OBAT PIL" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -679,10 +683,11 @@ public class Main {
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
-            } else switch (pilihtipe) {
-                case "1", "Obat Cair", "obat cair" -> {
+            } else switch (pilihan) {
+                case "1", "OBAT CAIR" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                         O========================================O
@@ -761,7 +766,7 @@ public class Main {
                     break;
                 }
 
-                case "2", "Obat Kapsul", "obat kapsul" -> {
+                case "2", "OBAT KAPSUL" -> {
                     if (kapsul.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -840,7 +845,7 @@ public class Main {
                     break;
                 }
 
-                case "3", "Obat Pil", "obat pil" -> {
+                case "3", "OBAT PIL" -> {
                     if (pil.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -951,11 +956,12 @@ public class Main {
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
             } else {
-                switch (pilihtipe) {
-                    case "1", "Obat Cair", "obat cair" -> {
+                switch (pilihan) {
+                    case "1", "OBAT CAIR" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
                             O========================================O
@@ -1000,7 +1006,7 @@ public class Main {
                         break;
                     }
 
-                    case "2", "Obat Kapsul", "obat kapsul" -> {
+                    case "2", "OBAT KAPSUL" -> {
                         if (kapsul.size() < 1) {
                             System.out.println("""
                             O========================================O
@@ -1043,7 +1049,7 @@ public class Main {
                         break;
                     }
 
-                    case "3", "Obat Pil" -> {
+                    case "3", "OBAT PIL" -> {
                         if (pil.size() < 1) {
                             System.out.println("""
                             O========================================O
@@ -1086,7 +1092,7 @@ public class Main {
                         break;
                     }
 
-                    case "0", "Exit", "exit" -> {
+                    case "0" -> {
                         System.out.println("");
                         break;
                     }
@@ -1094,8 +1100,7 @@ public class Main {
                     default -> {
                         System.out.println("""
                         O========================================O
-                        |              Menu Not Exist!!          |
-                        O========================================O""");
+                        |              Menu Not Exist!!          |""");
                     break;
                     }
                 }
@@ -1119,10 +1124,11 @@ public class Main {
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
-            if (null == pilihtipe) {
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
                 System.out.println(" Wrong Input! ");
-            } else switch (pilihtipe) {
-                case "1", "Obat Cair" -> {
+            } else switch (pilihan) {
+                case "1", "OBAT CAIR" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                         O========================================O
@@ -1145,6 +1151,7 @@ public class Main {
                             try{
                                 System.out.print("    Input Number  : ");
                                 int beli = Integer.parseInt(input.readLine());
+                                System.out.println("O========================================O");
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
@@ -1212,7 +1219,7 @@ public class Main {
                     }
                 }
                 
-                case "2", "Obat Kapsul", "obat kapsul" -> {
+                case "2", "OBAT KAPSUL" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
                         O========================================O
@@ -1235,6 +1242,7 @@ public class Main {
                             try{
                                 System.out.print("    Input Number  : ");
                                 int beli = Integer.parseInt(input.readLine());
+                                System.out.println("O========================================O");
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
@@ -1301,7 +1309,7 @@ public class Main {
                     }
                 }
                 
-                case "3", "Obat Pil", "obat pil" -> {
+                case "3", "OBAT PIL"-> {
                     if (cair.size() < 1) {
                         System.out.println("""
                             O========================================O
@@ -1324,6 +1332,7 @@ public class Main {
                             try{
                                 System.out.print("    Input Number  : ");
                                 int beli = Integer.parseInt(input.readLine());
+                                System.out.println("O========================================O");
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
@@ -1391,15 +1400,14 @@ public class Main {
                     }
                 }
                 
-                case "0", "Log Out", "log out"  -> {
+                case "0"  -> {
                     System.out.println("");
                     break;
                 }
                 default -> {
                     System.out.println("""
                     O========================================O
-                    |              Menu Not Exist!!          |
-                    O========================================O""");
+                    |              Menu Not Exist!!          |""");
                     break;
                 }
             }
@@ -1408,6 +1416,7 @@ public class Main {
     
     public static void keranjang() throws IOException{
         int total = 0, cekKeranjang = 0;
+        System.out.println("O========================================O");
         
         for (int i = 0; i < dataTransaksi.size(); i++){
             if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
@@ -1432,11 +1441,14 @@ public class Main {
             System.out.println("O========================================O");
             System.out.println("[1] Pembayaran");
             System.out.println("[2] Bersihkan Keranjang");
-            System.out.println("[0] Keluar");
+            System.out.println("[0] Exit");
+            System.out.println("O========================================O");
             System.out.print("    Input         : ");
             String pilihan = input.readLine();
-            switch(pilihan){
-                case "1", "Pembayaran" -> {
+            String pilih = pilihan.toUpperCase();
+            System.out.println("O========================================O");
+            switch(pilih){
+                case "1", "PEMBAYARAN" -> {
                     int bayar = 1;
                     while(bayar < total){
                         boolean isValidInput;
@@ -1539,7 +1551,7 @@ public class Main {
                     }
                 }
                 
-                case "2", "Bersihkan Keranjang" -> {
+                case "2", "BERSIHKAN KERANJANG" -> {
                     for(int i = 0; i < dataTransaksi.size();i++){
                         if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)){
                             dataTransaksi.remove(i);
@@ -1548,12 +1560,11 @@ public class Main {
                     System.out.println("Keranjang Telah Dibersihkan!");
                 }
                 
-                case "0", "Exit", "exit" -> {
+                case "0" -> {
                 }
                 
                 default -> {
                     System.out.println("""
-                    O========================================O
                     |              Menu Not Exist!!          |
                     O========================================O""");
                     System.out.print("Press [enter] to continue...");
@@ -1563,7 +1574,6 @@ public class Main {
             
         } else {
             System.out.println("""
-            O========================================O
             |        Pembelian Belum dilakukan       |
             O========================================O""");
         }
@@ -1589,10 +1599,12 @@ public class Main {
                            [0] Exit""");
         System.out.println("------------------------------------------");
         System.out.print("    Input : ");
+        
         String pilih = input.readLine();
         String pilihan = pilih.toUpperCase();
+        System.out.println("O========================================O");
         switch (pilihan){
-            case "1" -> {
+            case "1", "EDIT PROFIL" -> {
                 System.out.print("  Username           : ");
                 String userBaru = input.readLine();
                 System.out.print("  Password           : ");
@@ -1601,25 +1613,52 @@ public class Main {
                 String alamatBaru = input.readLine();
                 System.out.print("  Email              : ");
                 String emailBaru = input.readLine();
-                System.out.print("  Age                : ");
-                int umurBaru = Integer.parseInt(input.readLine());
-                for (int i = 1; i < dataUser.size(); i++) {
-                    if (dataUser.get(i).getUsername().equals(userAktif)){
-                        dataUser.get(i).setUsername(userBaru);
-                        dataUser.get(i).setPassword(passBaru);
-                        dataUser.get(i).setAddress(alamatBaru);
-                        dataUser.get(i).setEmail(emailBaru);
-                        dataUser.get(i).setAge(umurBaru);
-                    }
+                boolean isValidInput = false;
+                do{
+                    try {
+                        System.out.print("  Age                : ");
+                        int umurBaru = Integer.parseInt(input.readLine());
+                        if (umurBaru < 1) {
+                            throw new NumberFormatException();
+                        } else {
+                            isValidInput = true;
+                            System.out.println("""
+                                          O========================================O
+                                          |        Data Changed Successfully       |
+                                          O========================================O""");
+                        }
+                        for (int i = 1; i < dataUser.size(); i++) {
+                        if (dataUser.get(i).getUsername().equals(userAktif)){
+                            dataUser.get(i).setUsername(userBaru);
+                            dataUser.get(i).setPassword(passBaru);
+                            dataUser.get(i).setAddress(alamatBaru);
+                            dataUser.get(i).setEmail(emailBaru);
+                            dataUser.get(i).setAge(umurBaru);
+                        }
+                        
+                        } 
+                    }catch (NumberFormatException e) {
+                        System.out.println("""
+                                O========================================O
+                                |    Invalid input! Enter with number    |
+                                O========================================O""");
+                                isValidInput = false;
+                        }
+                    } while (!isValidInput);
+
+                
                 }
-            }
+                
+        
+    
+
+
             
             case "0" -> {
             }
             
             default -> {
                 System.out.println("""
-                O========================================O
                 |              Menu Not Exist!!          |
                 O========================================O""");
             }
@@ -1649,7 +1688,7 @@ public class Main {
                 System.out.println("O========================================O");
 
             } else switch (pilihan) {
-                case "1", "UPDATE PROFIL" -> {
+                case "1", "PROFIL" -> {
                     updateProfil();
                 }
                 
@@ -1661,7 +1700,7 @@ public class Main {
                     keranjang();
                 }
                 
-                case "0", "LOG OUT" -> {
+                case "0" -> {
                     System.out.println("O========================================O");
                     System.out.println("|         Thank you for visiting         |");
                     System.out.println("O========================================O");
