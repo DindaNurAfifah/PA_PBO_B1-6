@@ -1,10 +1,14 @@
 package ProjectAkhir;
 
+import static ProjectAkhir.Main.dataUser;
+import static ProjectAkhir.Main.userAktif;
+
 /**
  *
  * @author USERD
  */
 public class Transaksi {
+
     private String kodeObat, namaCustomer, namaObat, dosisAnak, dosisDewasa, status;
     private int jumlahObat, hargaObat;
 
@@ -83,10 +87,17 @@ public class Transaksi {
         this.hargaObat = hargaObat;
     }
 
-    public void tampil(){
+    public void tampil() {
         System.out.println(" Nama Obat     : " + this.namaObat);
-        System.out.println("    Dosis Anak    : " + this.dosisAnak);
-        System.out.println("    Dosis Dewasa  : " + this.dosisDewasa);
+        for (User cekUser : dataUser) {
+            if (cekUser.getUsername().equals(userAktif)) {
+                if (cekUser.getAge() < 17) {
+                    System.out.println("    Dosis         : " + this.dosisAnak);
+                } else {
+                    System.out.println("    Dosis         : " + this.dosisDewasa);
+                }
+            }
+        }
         System.out.println("    Harga Obat    : Rp." + this.hargaObat);
         System.out.println("    Jumlah        : " + this.jumlahObat);
         System.out.println("---------------------------------");
