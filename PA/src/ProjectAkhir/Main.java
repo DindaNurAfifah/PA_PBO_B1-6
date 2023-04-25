@@ -151,11 +151,13 @@ public class Main {
         for (User cekUser : dataUser) {
             if (cekUser.getUsername().equals(user) && cekUser.getPassword().equals(pass)) {
                 if (dataUser.get(0).getUsername().equals(user) && dataUser.get(0).getPassword().equals(pass)) {
-                    System.out.println("Welcome " + user);
+                    System.out.println("O========================================O");
+                    System.out.println("Welcome " + user + "!");
                     userAktif = user;
                     menuAdmin();
                 } else {
-                    System.out.println("Welcome " + user);
+                    System.out.println("O========================================O");
+                    System.out.println("Welcome " + user + "!");
                     userAktif = user;
                     menuUser();
                     return true;
@@ -292,7 +294,7 @@ public class Main {
                         dosisAnak = input.readLine();
                         System.out.print("  Dosis Dewasa       : ");
                         dosisDewasa = input.readLine();
-                        boolean isValidInput = false;
+                        boolean isValidInput;
                         do {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
@@ -344,7 +346,7 @@ public class Main {
                         dosisAnak = input.readLine();
                         System.out.print("  Dosis Dewasa       : ");
                         dosisDewasa = input.readLine();
-                        boolean isValidInput = false;
+                        boolean isValidInput;
                         do {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
@@ -395,7 +397,7 @@ public class Main {
                         dosisAnak = input.readLine();
                         System.out.print("  Dosis Dewasa       : ");
                         dosisDewasa = input.readLine();
-                        boolean isValidInput = false;
+                        boolean isValidInput;
                         do {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
@@ -664,7 +666,7 @@ public class Main {
                                 obatCair.setDosisObatAnak(input.readLine());
                                 System.out.print("  Dosis Dewasa       : ");
                                 obatCair.setDosisObatDewasa(input.readLine());
-                                boolean isValidInput = false;
+                                boolean isValidInput;
                                 do {
                                     try {
                                       System.out.print("  Harga Obat         : Rp.");
@@ -700,7 +702,7 @@ public class Main {
                                 } while (!isValidInput);
                                 
                             
-                            }
+                            } 
                         }
                     }
                     break;
@@ -736,7 +738,7 @@ public class Main {
                                 obatKapsul.setDosisObatAnak(input.readLine());
                                 System.out.print("  Dosis Dewasa       : ");
                                 obatKapsul.setDosisObatDewasa(input.readLine());
-                                boolean isValidInput = false;
+                                boolean isValidInput;
                                 do {
                                     try {
                                       System.out.print("  Harga Obat         : Rp.");
@@ -807,7 +809,7 @@ public class Main {
                                 obatPil.setDosisObatAnak(input.readLine());
                                 System.out.print("  Dosis Dewasa       : ");
                                 obatPil.setDosisObatDewasa(input.readLine());
-                                boolean isValidInput = false;
+                                boolean isValidInput;
                                 do {
                                     try {
                                       System.out.print("  Harga Obat         : Rp.");
@@ -866,7 +868,7 @@ public class Main {
     public static void deleteData() throws IOException {
         String pilihtipe = "a";
 
-        while (!"E".equals(pilihtipe)) {
+        while (!"0".equals(pilihtipe)) {
             System.out.println("""
                                 O========================================O
                                 |               Delete Obat              |
@@ -874,7 +876,7 @@ public class Main {
                                 | 1. Obat Cair                           |
                                 | 2. Obat Kapsul                         |
                                 | 3. Obat Pil                            |
-                                | E. Exit                                |
+                                | 0. Exit                                |
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -996,13 +998,21 @@ public class Main {
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
                                     break;
+                                } else {
+                                    System.out.println("""
+                                   O========================================O
+                                   |             Data Not Exist             |
+                                   O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                    break;
                                 }
                             }
                         }
                         break;
                     }
 
-                    case "E" -> {
+                    case "0", "Exit", "exit" -> {
                         System.out.println("");
                         break;
                     }
