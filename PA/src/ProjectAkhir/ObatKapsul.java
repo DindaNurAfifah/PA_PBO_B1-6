@@ -17,7 +17,7 @@ public class ObatKapsul extends Obat{
     }
 
     public void setKode(String kode) {
-        this.kode = "K" + kode;
+        this.kode = kode;
     }
     
     public void tampil(){
