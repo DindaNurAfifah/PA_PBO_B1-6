@@ -196,7 +196,10 @@ public class Main {
               User addUser = new User(user, pass, alamat, email, age);
               dataUser.add(addUser);
             } catch (NumberFormatException e) {
-              System.out.println("Invalid input! Enter with number!");
+              System.out.println("""
+                                                O========================================O
+                                                |    Invalid input! Enter with number    |
+                                                O========================================O""");
               isValidInput = false;
             }
           } while (!isValidInput);
@@ -1104,8 +1107,7 @@ public class Main {
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
-                                    |             Data Not Exist             |
-                                    O========================================O""");
+                                    |             Data Not Exist             |""");
                                 } else if (beli < cair.size() || beli > 0){
                                     String nama = userAktif, kode = cair.get(beli-1).getKode(),
                                             Obat = cair.get(beli-1).getNamaObat(),
@@ -1189,8 +1191,7 @@ public class Main {
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
-                                    |             Data Not Exist             |
-                                    O========================================O""");
+                                    |             Data Not Exist             |""");
                                 } else if (beli < kapsul.size() || beli > 0){
                                     String nama = userAktif, kode = kapsul.get(beli-1).getKode(),
                                         Obat = kapsul.get(beli-1).getNamaObat(),
@@ -1273,8 +1274,7 @@ public class Main {
                                 if (beli > jumlah_data){
                                     System.out.println("""
                                     O========================================O
-                                    |             Data Not Exist             |
-                                    O========================================O""");
+                                    |             Data Not Exist             |""");
                                 } else if (beli < pil.size() || beli > 0){
                                     String nama = userAktif, kode = pil.get(beli-1).getKode(),
                                             Obat = pil.get(beli-1).getNamaObat(),
@@ -1372,7 +1372,7 @@ public class Main {
                 boolean isValidInput;
                 do{
                     try{
-                        System.out.println("    Input         : Rp.");
+                        System.out.print("    Input         : Rp.");
                         bayar = Integer.parseInt(input.readLine());
                         isValidInput = true;
                 }catch (NumberFormatException e) {
