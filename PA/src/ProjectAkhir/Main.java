@@ -200,10 +200,6 @@ public class Main {
           } while (!isValidInput);
         }
 
-        
-        
-    
-
     public static void menuAdmin() throws IOException {
         String pilih = "a";
         while (!"0".equals(pilih)) {
@@ -620,7 +616,6 @@ public class Main {
         }
     }
     
-
     public static void updateData() throws IOException {
         String pilihtipe = "a", kode;
 
@@ -917,6 +912,14 @@ public class Main {
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
                                     break;
+                                } else {
+                                    System.out.println("""
+                                   O========================================O
+                                   |             Data Not Exist             |
+                                   O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                    break;
                                 }
                             }
                         }
@@ -947,6 +950,14 @@ public class Main {
                                     System.out.println("""
                                    O========================================O
                                    |         Data Deleted Successfully      |
+                                   O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                    break;
+                                } else {
+                                    System.out.println("""
+                                   O========================================O
+                                   |             Data Not Exist             |
                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
