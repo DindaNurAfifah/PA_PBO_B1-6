@@ -299,20 +299,12 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              if(harga < 1) {
-                                  throw new NumberFormatException();
-                              } else {
-                                  isValidInput = true;
-                              }
+                              isValidInput = true;
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  if(stok < 1) {
-                                    throw new NumberFormatException();
-                                  } else {
-                                        isValidInput = true;
-                                  }
+                                  isValidInput = true;
                                   ObatCair addCair = new ObatCair(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   cair.add(addCair);
                                   System.out.println("""
@@ -359,20 +351,12 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              if(harga < 1) {
-                                  throw new NumberFormatException();
-                              } else {
-                                  isValidInput = true;
-                              }
+                              isValidInput = true;
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  if(stok < 1) {
-                                        throw new NumberFormatException();
-                                    } else {
-                                        isValidInput = true;
-                                    }
+                                  isValidInput = true;
                                   ObatKapsul addKapsul = new ObatKapsul(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   kapsul.add(addKapsul);
                                   System.out.println("""
@@ -418,20 +402,12 @@ public class Main {
                             try {
                               System.out.print("  Harga Obat         : Rp.");
                               harga = Integer.parseInt(input.readLine());
-                              if(harga < 1) {
-                                  throw new NumberFormatException();
-                              } else {
-                                  isValidInput = true;
-                              }
+                              isValidInput = true;
                               do {
                                 try {
                                   System.out.print("  Stok Obat          : ");
                                   stok = Integer.parseInt(input.readLine());
-                                  if(stok < 1 ) {
-                                      throw new NumberFormatException();
-                                  } else {
-                                      isValidInput = true;
-                                  }
+                                  isValidInput = true;
                                   ObatPil addPil = new ObatPil(kode, nama, dosisAnak, dosisDewasa, harga, stok);
                                   pil.add(addPil);
                                   System.out.println("""
@@ -696,6 +672,7 @@ public class Main {
                                     try {
                                       System.out.print("  Harga Obat         : Rp.");
                                       obatCair.setHargaObat(Integer.parseInt(input.readLine()));
+                                      isValidInput = true;
                                       do {
                                         try {
                                           System.out.print("  Stok Obat          : ");
@@ -718,9 +695,9 @@ public class Main {
                                       } while (!isValidInput); 
                                     } catch (NumberFormatException e) {
                                       System.out.println("""
-                                          O========================================O
-                                          |    Invalid input! Enter with number    |
-                                          O========================================O""");
+                                        O========================================O
+                                        |    Invalid input! Enter with number    |
+                                        O========================================O""");
                                       isValidInput = false;
                                     }
                                 } while (!isValidInput);
@@ -826,9 +803,9 @@ public class Main {
                             O========================================O""");
                     } else {
                         System.out.println("""
-                                        O========================================O
-                                        |                 Obat Pil               |
-                                        O========================================O""");
+                        O========================================O
+                        |                 Obat Pil               |
+                        O========================================O""");
                         for (int i = 0; i < pil.size(); i++) {
                             System.out.print("[" + (i + 1) + "] ");
                             pil.get(i).tampil();
@@ -858,7 +835,6 @@ public class Main {
                                         try {
                                           System.out.print("  Stok Obat          : ");
                                           obatPil.setStokObat(Integer.parseInt(input.readLine()));
-                                          
                                           isValidInput = true;
                                           System.out.println("""
                                           O========================================O
@@ -877,9 +853,9 @@ public class Main {
                                       } while (!isValidInput); 
                                     } catch (NumberFormatException e) {
                                       System.out.println("""
-                                          O========================================O
-                                          |    Invalid input! Enter with number    |
-                                          O========================================O""");
+                                        O========================================O
+                                        |    Invalid input! Enter with number    |
+                                        O========================================O""");
                                       isValidInput = false;
                                     }
                                 } while (!isValidInput);
@@ -920,14 +896,14 @@ public class Main {
 
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
-                                O========================================O
-                                |               Delete Obat              |
-                                O========================================O
-                                | 1. Obat Cair                           |
-                                | 2. Obat Kapsul                         |
-                                | 3. Obat Pil                            |
-                                | 0. Exit                                |
-                                O========================================O""");
+            O========================================O
+            |               Delete Obat              |
+            O========================================O
+            | 1. Obat Cair                           |
+            | 2. Obat Kapsul                         |
+            | 3. Obat Pil                            |
+            | 0. Exit                                |
+            O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             if (null == pilihtipe) {
@@ -958,9 +934,9 @@ public class Main {
                                 if (cair.get(i).getKode().equals(no)) {
                                     cair.remove(i);
                                     System.out.println("""
-                                   O========================================O
-                                   |         Data Deleted Successfully      |
-                                   O========================================O""");
+                                    O========================================O
+                                    |         Data Deleted Successfully      |
+                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
                                     ditemukan = true;
@@ -987,9 +963,9 @@ public class Main {
                             O========================================O""");
                         } else {
                             System.out.println("""
-                                            O========================================O
-                                            |                Obat Kapsul             |
-                                            O========================================O""");
+                            O========================================O
+                            |                Obat Kapsul             |
+                            O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
                                 kapsul.get(i).tampil();
@@ -1001,9 +977,9 @@ public class Main {
                                 if (kapsul.get(i).getKode().equals(no)) {
                                     kapsul.remove(i);
                                     System.out.println("""
-                                   O========================================O
-                                   |         Data Deleted Successfully      |
-                                   O========================================O""");
+                                    O========================================O
+                                    |         Data Deleted Successfully      |
+                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
                                     ditemukan = true;
@@ -1044,9 +1020,9 @@ public class Main {
                                 if (pil.get(i).getKode().equals(no)) {
                                     pil.remove(i);
                                     System.out.println("""
-                                   O========================================O
-                                   |         Data Deleted Successfully      |
-                                   O========================================O""");
+                                    O========================================O
+                                    |         Data Deleted Successfully      |
+                                    O========================================O""");
                                     System.out.print("Press [enter] to continue...");
                                     new java.util.Scanner(System.in).nextLine();
                                     ditemukan = true;
@@ -1086,14 +1062,14 @@ public class Main {
         String pilihtipe = "a";
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
-                                O========================================O
-                                |                Beli Obat               |
-                                O========================================O
-                                | 1. Obat Cair                           |
-                                | 2. Obat Kapsul                         |
-                                | 3. Obat Pil                            |
-                                | 0. Exit                                |
-                                O========================================O""");
+            O========================================O
+            |                Beli Obat               |
+            O========================================O
+            | 1. Obat Cair                           |
+            | 2. Obat Kapsul                         |
+            | 3. Obat Pil                            |
+            | 0. Exit                                |
+            O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             if (null == pilihtipe) {
@@ -1102,52 +1078,74 @@ public class Main {
                 case "1", "Obat Cair" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                        O========================================O
+                        |               Data Is Empty            |
+                        O========================================O""");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     } else {
                         System.out.println("""
-                                            O========================================O
-                                            |                 Obat Cair              |
-                                            O========================================O""");
+                        O========================================O
+                        |                 Obat Cair              |
+                        O========================================O""");
                         for (int i = 0; i < cair.size(); i++) {
                             System.out.print("[" + (i + 1) + "] ");
                             cair.get(i).tampil();
                         }
-                        System.out.print("  Input Number : ");
-                        int beli = Integer.parseInt(input.readLine());
-                        
-                        if (beli < cair.size() || beli > 0){
-                            String nama = userAktif, kode = cair.get(beli-1).getKode(),
-                                    Obat = cair.get(beli-1).getNamaObat(),
-                                    DosisA = cair.get(beli-1).getDosisObatAnak(),
-                                    DosisD = cair.get(beli-1).getDosisObatDewasa();
-                            int harga = cair.get(beli-1).getHargaObat();
-                            
-                            String ulang = "a";
-                            while(!"0".equals(ulang)){
-                                System.out.print("  Jumlah pembelian   : ");
-                                int jumlah = Integer.parseInt(input.readLine());
+                        boolean isValidInput;
+                        do{
+                            try{
+                                System.out.print("  Input Number : ");
+                                int beli = Integer.parseInt(input.readLine());
+                                if (beli < cair.size() || beli > 0){
+                                    String nama = userAktif, kode = cair.get(beli-1).getKode(),
+                                            Obat = cair.get(beli-1).getNamaObat(),
+                                            DosisA = cair.get(beli-1).getDosisObatAnak(),
+                                            DosisD = cair.get(beli-1).getDosisObatDewasa();
+                                    int harga = cair.get(beli-1).getHargaObat();
 
-                                if (jumlah > cair.get(beli-1).stokObat || jumlah <= 0){
-                                    System.out.println("""
-                                            O========================================O
-                                            |               Stok Kurang              |
-                                            O========================================O""");
-                                    ulang = "a";
+                                    String ulang = "a";
+                                    while(!"0".equals(ulang)){
+                                        boolean isValidInput1;
+                                        do{
+                                            try{
+                                                System.out.print("  Jumlah pembelian   : ");
+                                                int jumlah = Integer.parseInt(input.readLine());
+                                                if (jumlah > cair.get(beli-1).stokObat || jumlah <= 0){
+                                                    System.out.println("""
+                                                    O========================================O
+                                                    |               Stok Kurang              |
+                                                    O========================================O""");
+                                                    ulang = "a";
 
-                                } else {
-                                    Transaksi buy = new Transaksi(kode, nama, 
-                                            Obat, DosisA, DosisD, 
-                                            "Proses", jumlah, harga);
+                                                } else {
+                                                    Transaksi buy = new Transaksi(kode, nama, 
+                                                            Obat, DosisA, DosisD, 
+                                                            "Proses", jumlah, harga);
 
-                                    dataTransaksi.add(buy);
-                                    ulang = "E";
+                                                    dataTransaksi.add(buy);
+                                                    ulang = "E";
+                                                }
+                                                isValidInput1 = true;
+                                            } catch (NumberFormatException e) {
+                                                System.out.println("""
+                                                O========================================O
+                                                |    Invalid input! Enter with number    |
+                                                O========================================O""");
+                                                isValidInput1 = false;
+                                            }
+                                        } while (!isValidInput1);
+                                    }
                                 }
+                                isValidInput = true;
+                            } catch (NumberFormatException e) {
+                                System.out.println("""
+                                O========================================O
+                                |    Invalid input! Enter with number    |
+                                O========================================O""");
+                                isValidInput = false;
                             }
-                        }
+                        } while (!isValidInput);
                         
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
@@ -1157,58 +1155,80 @@ public class Main {
                 case "2", "Obat Kapsul" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                        O========================================O
+                        |               Data Is Empty            |
+                        O========================================O""");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     } else {
                         System.out.println("""
-                                            O========================================O
-                                            |               Obat Kapsul              |
-                                            O========================================O""");
+                        O========================================O
+                        |               Obat Kapsul              |
+                        O========================================O""");
                         for (int i = 0; i < kapsul.size(); i++) {
                             System.out.print("[" + (i + 1) + "] ");
                             kapsul.get(i).tampil();
                         }
-                        System.out.print("  Input Number : ");
-                        int beli = Integer.parseInt(input.readLine());
-                        
-                        if (beli < kapsul.size() || beli > 0){
-                            String nama = userAktif, kode = kapsul.get(beli-1).getKode(),
-                                    Obat = kapsul.get(beli-1).getNamaObat(),
-                                    DosisA = kapsul.get(beli-1).getDosisObatAnak(),
-                                    DosisD = kapsul.get(beli-1).getDosisObatDewasa();
-                            int harga = kapsul.get(beli-1).getHargaObat();
-                            
-                            String ulang = "a";
-                            while(!"0".equals(ulang)){
-                                System.out.print("  Jumlah pembelian   : ");
-                                int jumlah = Integer.parseInt(input.readLine());
+                        boolean isValidInput;
+                        do{
+                            try{
+                                System.out.print("  Input Number : ");
+                                int beli = Integer.parseInt(input.readLine());
+                                if (beli < kapsul.size() || beli > 0){
+                                    String nama = userAktif, kode = kapsul.get(beli-1).getKode(),
+                                        Obat = kapsul.get(beli-1).getNamaObat(),
+                                        DosisA = kapsul.get(beli-1).getDosisObatAnak(),
+                                        DosisD = kapsul.get(beli-1).getDosisObatDewasa();
+                                    int harga = kapsul.get(beli-1).getHargaObat();
 
-                                if (jumlah > kapsul.get(beli-1).stokObat || jumlah <= 0){
-                                    System.out.println("""
-                                            O========================================O
-                                            |               Stok Kurang              |
-                                            O========================================O""");
-                                    ulang = "a";
+                                    String ulang = "a";
+                                    while(!"0".equals(ulang)){
+                                        boolean isValidInput1;
+                                        do{
+                                            try{
+                                                System.out.print("  Jumlah pembelian   : ");
+                                                int jumlah = Integer.parseInt(input.readLine());
+                                                if (jumlah > kapsul.get(beli-1).stokObat || jumlah <= 0){
+                                                    System.out.println("""
+                                                    O========================================O
+                                                    |               Stok Kurang              |
+                                                    O========================================O""");
+                                                    ulang = "a";
 
-                                } else {
-                                    Transaksi buy = new Transaksi(kode, nama, 
-                                            Obat, DosisA, DosisD, 
-                                            "Proses", jumlah, harga);
+                                                } else {
+                                                    Transaksi buy = new Transaksi(kode, nama, 
+                                                            Obat, DosisA, DosisD, 
+                                                            "Proses", jumlah, harga);
 
-                                    dataTransaksi.add(buy);
-                                    ulang = "E";
+                                                    dataTransaksi.add(buy);
+                                                    ulang = "E";
+                                                }
+                                                isValidInput1 = true;
+                                            } catch (NumberFormatException e) {
+                                                System.out.println("""
+                                                O========================================O
+                                                |    Invalid input! Enter with number    |
+                                                O========================================O""");
+                                                isValidInput1 = false;
+                                            }
+                                        } while (!isValidInput1);
+                                    }
                                 }
+                                isValidInput = true;
+                            } catch (NumberFormatException e) {
+                                System.out.println("""
+                                O========================================O
+                                |    Invalid input! Enter with number    |
+                                O========================================O""");
+                                isValidInput = false;
                             }
-                        }
-                        
+                        } while (!isValidInput);
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     }
                 }
+                
                 case "3", "Obat Pil" -> {
                     if (cair.size() < 1) {
                         System.out.println("""
@@ -1219,60 +1239,82 @@ public class Main {
                         new java.util.Scanner(System.in).nextLine();
                     } else {
                         System.out.println("""
-                                            O========================================O
-                                            |                 Obat Pil               |
-                                            O========================================O""");
+                        O========================================O
+                        |                 Obat Pil               |
+                        O========================================O""");
                         for (int i = 0; i < pil.size(); i++) {
                             System.out.print("[" + (i + 1) + "] ");
                             pil.get(i).tampil();
                         }
-                        System.out.print("  Input Number : ");
-                        int beli = Integer.parseInt(input.readLine());
-                        
-                        if (beli < pil.size() || beli > 0){
-                            String nama = userAktif, kode = pil.get(beli-1).getKode(),
-                                    Obat = pil.get(beli-1).getNamaObat(),
-                                    DosisA = pil.get(beli-1).getDosisObatAnak(),
-                                    DosisD = pil.get(beli-1).getDosisObatDewasa();
-                            int harga = pil.get(beli-1).getHargaObat();
-                            
-                            String ulang = "a";
-                            while(!"0".equals(ulang)){
-                                System.out.print("  Jumlah pembelian   : ");
-                                int jumlah = Integer.parseInt(input.readLine());
+                        boolean isValidInput;
+                        do{
+                            try{
+                                System.out.print("  Input Number : ");
+                                int beli = Integer.parseInt(input.readLine());
+                                if (beli < pil.size() || beli > 0){
+                                String nama = userAktif, kode = pil.get(beli-1).getKode(),
+                                        Obat = pil.get(beli-1).getNamaObat(),
+                                        DosisA = pil.get(beli-1).getDosisObatAnak(),
+                                        DosisD = pil.get(beli-1).getDosisObatDewasa();
+                                int harga = pil.get(beli-1).getHargaObat();
 
-                                if (jumlah > pil.get(beli-1).stokObat || jumlah <= 0){
-                                    System.out.println("""
-                                            O========================================O
-                                            |               Stok Kurang              |
-                                            O========================================O""");
-                                    ulang = "a";
+                                String ulang = "a";
+                                while(!"0".equals(ulang)){
 
-                                } else {
-                                    Transaksi buy = new Transaksi(kode, nama, 
-                                            Obat, DosisA, DosisD, 
-                                            "Proses", jumlah, harga);
+                                    boolean isValidInput1;
+                                    do{
+                                        try{
+                                            System.out.print("  Jumlah pembelian   : ");
+                                            int jumlah = Integer.parseInt(input.readLine());
+                                            if (jumlah > pil.get(beli-1).stokObat || jumlah <= 0){
+                                                System.out.println("""
+                                                        O========================================O
+                                                        |               Stok Kurang              |
+                                                        O========================================O""");
+                                                ulang = "a";
+                                            } else {
+                                                Transaksi buy = new Transaksi(kode, nama, 
+                                                        Obat, DosisA, DosisD, 
+                                                        "Proses", jumlah, harga);
 
-                                    dataTransaksi.add(buy);
-                                    ulang = "E";
+                                                dataTransaksi.add(buy);
+                                                ulang = "E";
+                                            }
+                                            isValidInput1 = true;
+                                    }catch (NumberFormatException e) {
+                                            System.out.println("""
+                                              O========================================O
+                                              |    Invalid input! Enter with number    |
+                                              O========================================O""");
+                                            isValidInput1 = false;
+                                        }
+                                    } while (!isValidInput1);
                                 }
                             }
-                        }
-                        
+                            isValidInput = true;
+                            } catch (NumberFormatException e) {
+                                System.out.println("""
+                                  O========================================O
+                                  |    Invalid input! Enter with number    |
+                                  O========================================O""");
+                                isValidInput = false;
+                            }
+                        } while (!isValidInput);        
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     }
                 }
+                
                 case "0", "Log Out", "log out"  -> {
                     System.out.println("");
                     break;
                 }
                 default -> {
                     System.out.println("""
-                                          O========================================O
-                                          |              Menu Not Exist!!          |
-                                          O========================================O""");
+                    O========================================O
+                    |              Menu Not Exist!!          |
+                    O========================================O""");
                     break;
                 }
             }
@@ -1306,9 +1348,9 @@ public class Main {
                 bayar = Integer.parseInt(input.readLine());
                 if (bayar < total){
                     System.out.println("""
-                                            O========================================O
-                                            |             Uang Anda Kurang!          |
-                                            O========================================O""");
+                    O========================================O
+                    |             Uang Anda Kurang!          |
+                    O========================================O""");
                 }
             }
             for (int i = 0; i < dataTransaksi.size(); i++){
@@ -1344,9 +1386,9 @@ public class Main {
             System.out.println("    Kembalian     : Rp. " + kembali);
         } else {
             System.out.println("""
-                                            O========================================O
-                                            |        Pembelian Belum dilakukan       |
-                                            O========================================O""");
+            O========================================O
+            |        Pembelian Belum dilakukan       |
+            O========================================O""");
         }
         
         System.out.print("Press [enter] to continue...");
@@ -1378,9 +1420,9 @@ public class Main {
             System.out.println("    Total Harga   : Rp." + total);
         } else {
             System.out.println("""
-                                            O========================================O
-                                            |        Pembelian Belum dilakukan       |
-                                            O========================================O""");
+            O========================================O
+            |        Pembelian Belum dilakukan       |
+            O========================================O""");
         }
         
         System.out.print("Press [enter] to continue...");
@@ -1426,9 +1468,9 @@ public class Main {
 
                 default -> {
                     System.out.println("""
-                                      O========================================O
-                                      |              Menu Not Exist!!          |
-                                      O========================================O""");
+                    O========================================O
+                    |              Menu Not Exist!!          |
+                    O========================================O""");
                     System.out.print("Press [enter] to continue...");
                     new java.util.Scanner(System.in).nextLine();
                 }
