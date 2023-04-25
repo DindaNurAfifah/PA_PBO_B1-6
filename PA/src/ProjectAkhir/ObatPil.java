@@ -1,10 +1,14 @@
 package ProjectAkhir;
 
+import static ProjectAkhir.Main.dataUser;
+import static ProjectAkhir.Main.userAktif;
+
 /**
  *
  * @author ASUS-GK
  */
-public class ObatPil extends Obat{
+public class ObatPil extends Obat {
+
     private String kode;
 
     public ObatPil(String kode, String namaObat, String dosisObatAnak, String dosisObatDewasa, int hargaObat, int stokObat) {
@@ -20,13 +24,28 @@ public class ObatPil extends Obat{
         this.kode = kode;
     }
 
-    public void tampil(){
+    public void tampil() {
         System.out.println("Kode Obat     : " + this.kode);
         System.out.println("    Nama Obat     : " + this.namaObat);
-        System.out.println("    Dosis Anak    : " + this.dosisObatAnak);
-        System.out.println("    Dosis Dewasa  : " + this.dosisObatDewasa);
-        System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-        System.out.println("    Stok Obat     : " + this.stokObat);
-        System.out.println("---------------------------------");
+        if (userAktif.equals("admin")) {
+            System.out.println("    Dosis Anak    : " + this.dosisObatAnak);
+            System.out.println("    Dosis Dewasa  : " + this.dosisObatDewasa);
+        } else {
+            for (User cekUser : dataUser) {
+                if (cekUser.getUsername().equals(userAktif)) {
+                    if (cekUser.getAge() < 17) {
+                        System.out.println("    Dosis         : " + this.dosisObatAnak);
+                    } else {
+                        System.out.println("    Dosis         : " + this.dosisObatDewasa);
+                    }
+                }
+            }
+        }
+        System.out.println(
+                "    Harga Obat    : Rp." + this.hargaObat);
+        System.out.println(
+                "    Stok Obat     : " + this.stokObat);
+        System.out.println(
+                "---------------------------------");
     }
 }
