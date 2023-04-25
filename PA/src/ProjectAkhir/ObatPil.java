@@ -17,9 +17,9 @@ public class ObatPil extends Obat{
     }
 
     public void setKode(String kode) {
-        this.kode = "P" + kode;
+        this.kode = kode;
     }
-    
+
     public void tampil(){
         System.out.println("Kode Obat     : " + this.kode);
         System.out.println("    Nama Obat     : " + this.namaObat);
