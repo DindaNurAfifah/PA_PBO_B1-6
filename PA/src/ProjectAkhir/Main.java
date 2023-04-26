@@ -46,7 +46,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         String pilih = "a";
-        while (!"E".equals(pilih)) {
+        while (!"0".equals(pilih)) {
             System.out.println("""
                 O========================================O
                 |     Aplikasi Apotek Chemical Farma     |
@@ -86,7 +86,8 @@ public class Main {
                         break;
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
+                        System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank you for visiting         |");
                         System.out.println("O========================================O");
@@ -97,8 +98,7 @@ public class Main {
                         System.out.println("""
                             O========================================O
                             |              Menu Not Exist!!          |
-                            O========================================O
-                            """);
+                            O========================================O""");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     }
@@ -149,7 +149,8 @@ public class Main {
             O========================================O
             |     Aplikasi Apotek Chemical Farma     |
             |                 Login!                 |
-            O========================================O""");
+            O========================================O
+            """);
         System.out.print("  Username : ");
         user = input.readLine();
         System.out.print("  Password : ");
@@ -157,12 +158,12 @@ public class Main {
         for (User cekUser : dataUser) {
             if (cekUser.getUsername().equals(user) && cekUser.getPassword().equals(pass)) {
                 if (dataUser.get(0).getUsername().equals(user) && dataUser.get(0).getPassword().equals(pass)) {
-                    System.out.println("O========================================O");
+                    System.out.println("\nO========================================O");
                     System.out.println("Welcome " + user + "!");
                     userAktif = user;
                     menuAdmin();
                 } else {
-                    System.out.println("O========================================O");
+                    System.out.println("\nO========================================O");
                     System.out.println("Welcome " + user + "!");
                     userAktif = user;
                     menuUser();
@@ -266,12 +267,12 @@ public class Main {
                         deleteData();
 
                     case "0" -> {
+                        System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank you for visiting         |");
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
-                        break;
                     }
 
                     default -> {
@@ -481,9 +482,8 @@ public class Main {
                         } while (!isValidInput);
                     }
 
-                    case "0", "Exit", "exit" -> {
+                    case "0" -> {
                         System.out.println("");
-                        break;
                     }
 
                     default -> {
@@ -491,7 +491,8 @@ public class Main {
                                           O========================================O
                                           |              Menu Not Exist!!          |
                                           O========================================O""");
-                        break;
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -528,9 +529,8 @@ public class Main {
                     case "3", "READ DATA TRANSAKSI" ->
                         readDataTransaksi();
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
-                        break;
                     }
 
                     default -> {
@@ -538,7 +538,8 @@ public class Main {
                                           O========================================O
                                           |              Menu Not Exist!!          |
                                           O========================================O""");
-                        break;
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -659,16 +660,16 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         }
                     }
-                    case "0", "Exit", "exit" -> {
+                    case "0" -> {
                         System.out.println("");
-                        break;
                     }
                     default -> {
                         System.out.println("""
                             O========================================O
                             |              Menu Not Exist!!          |
                             O========================================O""");
-                        break;
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -988,9 +989,8 @@ public class Main {
                         break;
                     }
 
-                    case "0", "Exit", "exit" -> {
+                    case "0" -> {
                         System.out.println("");
-                        break;
                     }
 
                     default -> {
@@ -998,7 +998,8 @@ public class Main {
                     O========================================O
                     |              Menu Not Exist!!          |
                     O========================================O""");
-                        break;
+                    System.out.print("Press [enter] to continue...");
+                    new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -1159,14 +1160,15 @@ public class Main {
 
                     case "0" -> {
                         System.out.println("");
-                        break;
                     }
 
                     default -> {
                         System.out.println("""
                         O========================================O
-                        |              Menu Not Exist!!          |""");
-                        break;
+                        |              Menu Not Exist!!          |
+                        O========================================O""");
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -1219,7 +1221,6 @@ public class Main {
                                     System.out.println("O========================================O");
                                     if ((beli > cair.size()) || beli <= 0) {
                                         System.out.println("""
-                                    O========================================O
                                     |             Data Not Exist             |
                                     O========================================O""");
                                     } else if (cair.get(beli - 1).getStokObat() == 0) {
@@ -1239,9 +1240,9 @@ public class Main {
                                                 try {
                                                     System.out.print("  Jumlah pembelian: ");
                                                     int jumlah = Integer.parseInt(input.readLine());
+                                                    System.out.println("O========================================O");
                                                     if (jumlah > cair.get(beli - 1).getStokObat()) {
                                                         System.out.println("""
-                                                    O========================================O
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                         ulang = "a";
@@ -1252,6 +1253,9 @@ public class Main {
                                                   O========================================O""");
                                                         ulang = "a";
                                                     } else {
+                                                        System.out.println("""
+                                                  |         Menambah ke Keranjang!         |
+                                                  O========================================O""");
                                                         int stok = cair.get(beli - 1).getStokObat() - jumlah;
                                                         cair.get(beli - 1).setStokObat(stok);
                                                         Transaksi buy = new Transaksi(kode, nama,
@@ -1281,8 +1285,6 @@ public class Main {
                                     isValidInput = false;
                                 }
                             } while (!isValidInput);
-
-                            System.out.println("O========================================O");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                         }
@@ -1314,7 +1316,6 @@ public class Main {
                                     System.out.println("O========================================O");
                                     if ((beli > jumlah_data) || (beli <= 0)) {
                                         System.out.println("""
-                                    O========================================O
                                     |             Data Not Exist             |
                                     O========================================O""");
                                     } else if (kapsul.get(beli - 1).getStokObat() == 0) {
@@ -1334,9 +1335,9 @@ public class Main {
                                                 try {
                                                     System.out.print("  Jumlah pembelian: ");
                                                     int jumlah = Integer.parseInt(input.readLine());
+                                                    System.out.println("O========================================O");
                                                     if (jumlah > kapsul.get(beli - 1).getStokObat()) {
                                                         System.out.println("""
-                                                    O========================================O
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                         ulang = "a";
@@ -1347,6 +1348,9 @@ public class Main {
                                                   O========================================O""");
                                                         ulang = "a";
                                                     } else {
+                                                        System.out.println("""
+                                                  |         Menambah ke Keranjang!         |
+                                                  O========================================O""");
                                                         int stok = kapsul.get(beli - 1).getStokObat() - jumlah;
                                                         kapsul.get(beli - 1).setStokObat(stok);
                                                         Transaksi buy = new Transaksi(kode, nama,
@@ -1376,7 +1380,6 @@ public class Main {
                                     isValidInput = false;
                                 }
                             } while (!isValidInput);
-                            System.out.println("O========================================O");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                             jumlah_data = 0;
@@ -1409,7 +1412,6 @@ public class Main {
                                     System.out.println("O========================================O");
                                     if ((beli > jumlah_data) || (beli <= 0)) {
                                         System.out.println("""
-                                    O========================================O
                                     |             Data Not Exist             |
                                     O========================================O""");
                                     } else if (pil.get(beli - 1).getStokObat() == 0) {
@@ -1430,9 +1432,9 @@ public class Main {
                                                 try {
                                                     System.out.print("  Jumlah pembelian: ");
                                                     int jumlah = Integer.parseInt(input.readLine());
+                                                    System.out.println("O========================================O");
                                                     if (jumlah > pil.get(beli - 1).stokObat) {
                                                         System.out.println("""
-                                                            O========================================O
                                                             |               Stok Kurang              |
                                                             O========================================O""");
                                                         ulang = "a";
@@ -1443,6 +1445,9 @@ public class Main {
                                                   O========================================O""");
                                                         ulang = "a";
                                                     } else {
+                                                        System.out.println("""
+                                                  |         Menambah ke Keranjang!         |
+                                                  O========================================O""");
                                                         int stok = pil.get(beli - 1).getStokObat() - jumlah;
                                                         pil.get(beli - 1).setStokObat(stok);
                                                         Transaksi buy = new Transaksi(kode, nama,
@@ -1472,7 +1477,6 @@ public class Main {
                                     isValidInput = false;
                                 }
                             } while (!isValidInput);
-                            System.out.println("O========================================O");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                             jumlah_data = 0;
@@ -1481,13 +1485,14 @@ public class Main {
 
                     case "0" -> {
                         System.out.println("");
-                        break;
                     }
                     default -> {
                         System.out.println("""
                     O========================================O
-                    |              Menu Not Exist!!          |""");
-                        break;
+                    |              Menu Not Exist!!          |
+                    O========================================O""");
+                    System.out.print("Press [enter] to continue...");
+                    new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -1652,9 +1657,11 @@ public class Main {
                     }
 
                     System.out.println("Keranjang Telah Dibersihkan!");
+                    System.out.println("O========================================O");
                 }
 
                 case "0" -> {
+                    System.out.println("");
                 }
 
                 default -> {
@@ -1744,12 +1751,15 @@ public class Main {
             }
 
             case "0" -> {
+                System.out.println("");
             }
 
             default -> {
                 System.out.println("""
                 |              Menu Not Exist!!          |
                 O========================================O""");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             }
         }
         System.out.print("Press [enter] to continue...");
@@ -1791,6 +1801,7 @@ public class Main {
                     }
 
                     case "0" -> {
+                        System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank you for visiting         |");
                         System.out.println("O========================================O");
