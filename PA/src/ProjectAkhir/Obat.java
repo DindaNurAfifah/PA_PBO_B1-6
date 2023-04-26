@@ -4,7 +4,7 @@ package ProjectAkhir;
  *
  * @author ASUS-GK
  */
-public class Obat {
+public abstract class Obat {
     protected String namaObat, dosisObatAnak, dosisObatDewasa;
     protected int hargaObat, stokObat;
 
@@ -36,24 +36,25 @@ public class Obat {
         return stokObat;
     }
 
-    public void setNamaObat(String namaObat) {
+    public final void setNamaObat(String namaObat) {
         this.namaObat = namaObat;
     }
 
-    public void setDosisObatAnak(String dosisObatAnak) {
+    public final void setDosisObatAnak(String dosisObatAnak) {
         this.dosisObatAnak = dosisObatAnak;
     }
 
-    public void setDosisObatDewasa(String dosisObatDewasa) {
+    public final void setDosisObatDewasa(String dosisObatDewasa) {
         this.dosisObatDewasa = dosisObatDewasa;
     }
 
-    public void setHargaObat(int hargaObat) {
+    public final void setHargaObat(int hargaObat) {
         this.hargaObat = hargaObat;
     }
 
-    public void setStokObat(int stokObat) {
+    public final void setStokObat(int stokObat) {
         this.stokObat = stokObat;
     }
-   
+    
+    public abstract void tampil();
 }
