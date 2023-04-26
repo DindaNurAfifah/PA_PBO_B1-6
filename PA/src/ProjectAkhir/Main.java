@@ -1562,13 +1562,13 @@ public class Main {
                                         dataTransaksi.get(i).setStatus("Sukses");
 
                                         // menghapus obat jika stok = 0
-                                        for (int j = 0; j < cair.size(); j++) {
-                                            if (cair.get(j).getKode().equals(obatC.getKode())) {
-                                                if (cair.get(j).getStokObat() == 0) {
-                                                    cair.remove(j);
-                                                }
-                                            }
-                                        }
+//                                        for (int j = 0; j < cair.size(); j++) {
+//                                            if (cair.get(j).getKode().equals(obatC.getKode())) {
+//                                                if (cair.get(j).getStokObat() == 0) {
+//                                                    cair.remove(j);
+//                                                }
+//                                            }
+//                                        }
                                     }
                                 }
                             }
@@ -1584,13 +1584,13 @@ public class Main {
                                         dataTransaksi.get(i).setStatus("Sukses");
 
                                         // menghapus obat jika stok = 0
-                                        for (int j = 0; j < kapsul.size(); j++) {
-                                            if (kapsul.get(j).getKode().equals(obatK.getKode())) {
-                                                if (kapsul.get(j).getStokObat() == 0) {
-                                                    kapsul.remove(j);
-                                                }
-                                            }
-                                        }
+//                                        for (int j = 0; j < kapsul.size(); j++) {
+//                                            if (kapsul.get(j).getKode().equals(obatK.getKode())) {
+//                                                if (kapsul.get(j).getStokObat() == 0) {
+//                                                    kapsul.remove(j);
+//                                                }
+//                                            }
+//                                        }
                                     }
                                 }
                             }
@@ -1606,13 +1606,13 @@ public class Main {
                                         dataTransaksi.get(i).setStatus("Sukses");
 
                                         // menghapus obat jika stok = 0
-                                        for (int j = 0; j < pil.size(); j++) {
-                                            if (pil.get(j).getKode().equals(obatP.getKode())) {
-                                                if (pil.get(j).getStokObat() == 0) {
-                                                    pil.remove(j);
-                                                }
-                                            }
-                                        }
+//                                        for (int j = 0; j < pil.size(); j++) {
+//                                            if (pil.get(j).getKode().equals(obatP.getKode())) {
+//                                                if (pil.get(j).getStokObat() == 0) {
+//                                                    pil.remove(j);
+//                                                }
+//                                            }
+//                                        }
                                     }
                                 }
                             }
@@ -1666,6 +1666,7 @@ public class Main {
                         }
                     }
 
+                    // menghapus isi keranjang belanja
                     for (int i = 0; i < dataTransaksi.size(); i++) {
                         if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
                                 && dataTransaksi.get(i).getStatus().equals("Proses")) {
