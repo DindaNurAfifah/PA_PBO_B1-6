@@ -48,20 +48,22 @@ public class Main {
         String pilih = "a";
         while (!"E".equals(pilih)) {
             System.out.println("""
-                               O========================================O
-                               |     Aplikasi Apotek Chemical Farma     |
-                               O========================================O
-                               | 1. Registration                        |
-                               | 2. Login                               |
-                               | 0. Exit                                |
-                               O========================================O""");
+                O========================================O
+                |     Aplikasi Apotek Chemical Farma     |
+                O========================================O
+                | [1] Registration                       |
+                | [2] Login                              |
+                | [0] Exit                               |
+                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
             String pilihan = pilih.toUpperCase();
             if (null == pilihan) {
-                System.out.println("O========================================O");
-                System.out.println("|             Invalid choice             |");
-                System.out.println("O========================================O");
+                System.out.println("""
+                    O========================================O
+                    |              Invalid choice            | 
+                    O========================================O
+                    """);
                 System.out.print("Press [enter] to continue...");
                 new java.util.Scanner(System.in).nextLine();
             } else {
@@ -76,10 +78,10 @@ public class Main {
                             System.out.println("");
                         } else {
                             System.out.println("""
-                                               O========================================O
-                                               |             Account not found          | 
-                                               O========================================O
-                                               """);
+                                O========================================O
+                                |             Account not found          | 
+                                O========================================O
+                                """);
                         }
                         break;
                     }
@@ -93,9 +95,10 @@ public class Main {
 
                     default -> {
                         System.out.println("""
-                                          O========================================O
-                                          |              Menu Not Exist!!          |
-                                          O========================================O""");
+                            O========================================O
+                            |              Menu Not Exist!!          |
+                            O========================================O
+                            """);
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
                     }
@@ -143,10 +146,10 @@ public class Main {
     public static boolean login() throws IOException {
         String user, pass;
         System.out.println("""
-                                O========================================O
-                                |     Aplikasi Apotek Chemical Farma     |
-                                |                 Login!                 |
-                                O========================================O""");
+            O========================================O
+            |     Aplikasi Apotek Chemical Farma     |
+            |                 Login!                 |
+            O========================================O""");
         System.out.print("  Username : ");
         user = input.readLine();
         System.out.print("  Password : ");
@@ -229,15 +232,15 @@ public class Main {
         String pilih = "a";
         while (!"0".equals(pilih)) {
             System.out.println("""
-                               O========================================O
-                               |     Aplikasi Apotek Chemical Farma     |
-                               O========================================O
-                               | 1. Add Data                            |
-                               | 2. Read Data                           |
-                               | 3. Update Data                         |
-                               | 4. Delete Data                         |
-                               | 0. Log Out                             |
-                               O========================================O""");
+                O========================================O
+                |     Aplikasi Apotek Chemical Farma     |
+                O========================================O
+                | [1] Add Data                           |
+                | [2] Read Data                          |
+                | [3] Update Data                        |
+                | [4] Delete Data                        |
+                | [0] Log Out                            |
+                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
             String pilihan = pilih.toUpperCase();
@@ -574,14 +577,14 @@ public class Main {
         String pilihtipe = "a";
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
-                                O========================================O
-                                |              Read Data Obat            |
-                                O========================================O
-                                | 1. Obat Cair                           |
-                                | 2. Obat Kapsul                         |
-                                | 3. Obat Pil                            |
-                                | 0. Exit                                |
-                                O========================================O""");
+                O========================================O
+                |              Read Data Obat            |
+                O========================================O
+                | 1. Obat Cair                           |
+                | 2. Obat Kapsul                         |
+                | 3. Obat Pil                            |
+                | 0. Exit                                |
+                O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
@@ -592,19 +595,19 @@ public class Main {
                     case "1", "OBAT CAIR" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                         } else {
                             System.out.println("""
-                                        O========================================O
-                                        |                Obat Cair               |
-                                        O========================================O""");
+                                O========================================O
+                                |                Obat Cair               |
+                                O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                cair.get(i).tampil();
+                                cair.get(i).tampil(true);
                             }
 
                             System.out.println("O========================================O");
@@ -615,19 +618,19 @@ public class Main {
                     case "2", "OBAT KAPSUL" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                         } else {
                             System.out.println("""
-                                        O========================================O
-                                        |               Obat Kapsul              |
-                                        O========================================O""");
+                                O========================================O
+                                |               Obat Kapsul              |
+                                O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                kapsul.get(i).tampil();
+                                kapsul.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print("Press [enter] to continue...");
@@ -637,19 +640,19 @@ public class Main {
                     case "3", "OBAT PIL" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
                             System.out.print("Press [enter] to continue...");
                             new java.util.Scanner(System.in).nextLine();
                         } else {
                             System.out.println("""
-                                        O========================================O
-                                        |                 Obat Pil               |
-                                        O========================================O""");
+                                O========================================O
+                                |                 Obat Pil               |
+                                O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                pil.get(i).tampil();
+                                pil.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print("Press [enter] to continue...");
@@ -662,9 +665,9 @@ public class Main {
                     }
                     default -> {
                         System.out.println("""
-                                          O========================================O
-                                          |              Menu Not Exist!!          |
-                                          O========================================O""");
+                            O========================================O
+                            |              Menu Not Exist!!          |
+                            O========================================O""");
                         break;
                     }
                 }
@@ -676,9 +679,9 @@ public class Main {
 
         if (dataTransaksi.size() < 1) {
             System.out.println("""
-                            O========================================O
-                            |               Data Is Empty            |
-                            O========================================O""");
+                O========================================O
+                |               Data Is Empty            |
+                O========================================O""");
             System.out.print("Press [enter] to continue...");
             new java.util.Scanner(System.in).nextLine();
         } else {
@@ -697,14 +700,14 @@ public class Main {
 
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
-                                O========================================O
-                                |               Update Obat              |
-                                O========================================O
-                                | 1. Obat Cair                           |
-                                | 2. Obat Kapsul                         |
-                                | 3. Obat Pil                            |
-                                | 0. Exit                                |
-                                O========================================O""");
+                O========================================O
+                |               Update Obat              |
+                O========================================O
+                | 1. Obat Cair                           |
+                | 2. Obat Kapsul                         |
+                | 3. Obat Pil                            |
+                | 0. Exit                                |
+                O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
@@ -715,17 +718,17 @@ public class Main {
                     case "1", "OBAT CAIR" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
-                        O========================================O
-                        |               Data Is Empty            |
-                        O========================================O""");
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
                         } else {
                             System.out.println("""
-                        O========================================O
-                        |                 Obat Cair              |
-                        O========================================O""");
+                                O========================================O
+                                |                 Obat Cair              |
+                                O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                cair.get(i).tampil();
+                                cair.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print(" Input Code : ");
@@ -816,7 +819,7 @@ public class Main {
                                         O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                kapsul.get(i).tampil();
+                                kapsul.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print(" Input Code : ");
@@ -907,7 +910,7 @@ public class Main {
                         O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                pil.get(i).tampil();
+                                pil.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print(" Input Code : ");
@@ -1038,7 +1041,7 @@ public class Main {
                             O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                cair.get(i).tampil();
+                                cair.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
@@ -1081,7 +1084,7 @@ public class Main {
                             O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                kapsul.get(i).tampil();
+                                kapsul.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
@@ -1124,7 +1127,7 @@ public class Main {
                             O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                pil.get(i).tampil();
+                                pil.get(i).tampil(true);
                             }
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
@@ -1206,7 +1209,7 @@ public class Main {
                         O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                cair.get(i).tampil();
+                                cair.get(i).tampil(false);
                             }
                             boolean isValidInput;
                             do {
@@ -1214,7 +1217,7 @@ public class Main {
                                     System.out.print("    Input Number  : ");
                                     int beli = Integer.parseInt(input.readLine());
                                     System.out.println("O========================================O");
-                                    if ((beli > cair.size()) || beli < 0) {
+                                    if ((beli > cair.size()) || beli <= 0) {
                                         System.out.println("""
                                     O========================================O
                                     |             Data Not Exist             |
@@ -1300,7 +1303,7 @@ public class Main {
                         O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                kapsul.get(i).tampil();
+                                kapsul.get(i).tampil(false);
                                 jumlah_data++;
                             }
                             boolean isValidInput;
@@ -1309,7 +1312,7 @@ public class Main {
                                     System.out.print("    Input Number  : ");
                                     int beli = Integer.parseInt(input.readLine());
                                     System.out.println("O========================================O");
-                                    if ((beli > jumlah_data) || (beli < 0)) {
+                                    if ((beli > jumlah_data) || (beli <= 0)) {
                                         System.out.println("""
                                     O========================================O
                                     |             Data Not Exist             |
@@ -1395,7 +1398,7 @@ public class Main {
                         O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
-                                pil.get(i).tampil();
+                                pil.get(i).tampil(false);
                                 jumlah_data++;
                             }
                             boolean isValidInput;
@@ -1404,7 +1407,7 @@ public class Main {
                                     System.out.print("    Input Number  : ");
                                     int beli = Integer.parseInt(input.readLine());
                                     System.out.println("O========================================O");
-                                    if ((beli > jumlah_data) || (beli < 0)) {
+                                    if ((beli > jumlah_data) || (beli <= 0)) {
                                         System.out.println("""
                                     O========================================O
                                     |             Data Not Exist             |
@@ -1560,15 +1563,6 @@ public class Main {
                                         int stok = obatC.getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         obatC.setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
-
-                                        // menghapus obat jika stok = 0
-//                                        for (int j = 0; j < cair.size(); j++) {
-//                                            if (cair.get(j).getKode().equals(obatC.getKode())) {
-//                                                if (cair.get(j).getStokObat() == 0) {
-//                                                    cair.remove(j);
-//                                                }
-//                                            }
-//                                        }
                                     }
                                 }
                             }
@@ -1582,15 +1576,6 @@ public class Main {
                                         int stok = obatK.getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         obatK.setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
-
-                                        // menghapus obat jika stok = 0
-//                                        for (int j = 0; j < kapsul.size(); j++) {
-//                                            if (kapsul.get(j).getKode().equals(obatK.getKode())) {
-//                                                if (kapsul.get(j).getStokObat() == 0) {
-//                                                    kapsul.remove(j);
-//                                                }
-//                                            }
-//                                        }
                                     }
                                 }
                             }
@@ -1604,15 +1589,6 @@ public class Main {
                                         int stok = obatP.getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         obatP.setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
-
-                                        // menghapus obat jika stok = 0
-//                                        for (int j = 0; j < pil.size(); j++) {
-//                                            if (pil.get(j).getKode().equals(obatP.getKode())) {
-//                                                if (pil.get(j).getStokObat() == 0) {
-//                                                    pil.remove(j);
-//                                                }
-//                                            }
-//                                        }
                                     }
                                 }
                             }
