@@ -7,7 +7,8 @@ import static ProjectAkhir.Main.userAktif;
  *
  * @author ASUS-GK
  */
-public class ObatKapsul extends Obat{
+public class ObatKapsul extends Obat implements Dosis {
+
     private String kode;
 
     public ObatKapsul(String kode, String namaObat, String dosisObatAnak, String dosisObatDewasa, int hargaObat, int stokObat) {
@@ -22,7 +23,7 @@ public class ObatKapsul extends Obat{
     public void setKode(String kode) {
         this.kode = kode;
     }
-    
+
     @Override
     public void tampil() {
         System.out.println("Kode Obat     : " + this.kode);
@@ -39,18 +40,23 @@ public class ObatKapsul extends Obat{
             System.out.println("---------------------------------");
         } else {
             tampil();
-            for (User cekUser : dataUser) {
-                if (cekUser.getUsername().equals(userAktif)) {
-                    if (cekUser.getAge() < 17) {
-                        System.out.println("    Dosis         : " + this.dosisObatAnak);
-                    } else {
-                        System.out.println("    Dosis         : " + this.dosisObatDewasa);
-                    }
-                }
-            }
+            tampilDosis();
         }
         System.out.println("    Harga Obat    : Rp." + this.hargaObat);
         System.out.println("    Stok Obat     : " + this.stokObat);
         System.out.println("---------------------------------");
+    }
+
+    @Override
+    public void tampilDosis() {
+        for (User cekUser : dataUser) {
+            if (cekUser.getUsername().equals(userAktif)) {
+                if (cekUser.getAge() < 17) {
+                    System.out.println("    Dosis         : " + this.dosisObatAnak);
+                } else {
+                    System.out.println("    Dosis         : " + this.dosisObatDewasa);
+                }
+            }
+        }
     }
 }
