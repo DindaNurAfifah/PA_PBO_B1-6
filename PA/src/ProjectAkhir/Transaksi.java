@@ -89,12 +89,17 @@ public class Transaksi {
 
     public void tampil() {
         System.out.println(" Nama Obat     : " + this.namaObat);
-        for (User cekUser : dataUser) {
-            if (cekUser.getUsername().equals(userAktif)) {
-                if (cekUser.getAge() < 17) {
-                    System.out.println("    Dosis         : " + this.dosisAnak);
-                } else {
-                    System.out.println("    Dosis         : " + this.dosisDewasa);
+        if (userAktif.equals("admin")) {
+            System.out.println("    Dosis         : " + this.dosisAnak);
+            System.out.println("    Dosis         : " + this.dosisDewasa);
+        } else {
+            for (User cekUser : dataUser) {
+                if (cekUser.getUsername().equals(userAktif)) {
+                    if (cekUser.getAge() < 17) {
+                        System.out.println("    Dosis         : " + this.dosisAnak);
+                    } else {
+                        System.out.println("    Dosis         : " + this.dosisDewasa);
+                    }
                 }
             }
         }
