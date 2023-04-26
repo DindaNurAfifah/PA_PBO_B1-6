@@ -23,13 +23,22 @@ public class ObatKapsul extends Obat{
         this.kode = kode;
     }
     
-    public void tampil(){
+    @Override
+    public void tampil() {
         System.out.println("Kode Obat     : " + this.kode);
         System.out.println("    Nama Obat     : " + this.namaObat);
-        if (userAktif.equals("admin")) {
+    }
+
+    public void tampil(boolean showDosis) {
+        if (showDosis) {
+            tampil();
             System.out.println("    Dosis Anak    : " + this.dosisObatAnak);
             System.out.println("    Dosis Dewasa  : " + this.dosisObatDewasa);
+            System.out.println("    Harga Obat    : Rp." + this.hargaObat);
+            System.out.println("    Stok Obat     : " + this.stokObat);
+            System.out.println("---------------------------------");
         } else {
+            tampil();
             for (User cekUser : dataUser) {
                 if (cekUser.getUsername().equals(userAktif)) {
                     if (cekUser.getAge() < 17) {
