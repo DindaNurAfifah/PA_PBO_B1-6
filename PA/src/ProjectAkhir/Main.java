@@ -999,8 +999,8 @@ public class Main {
                     O========================================O
                     |              Menu Not Exist!!          |
                     O========================================O""");
-                    System.out.print("Press [enter] to continue...");
-                    new java.util.Scanner(System.in).nextLine();
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
@@ -1048,26 +1048,46 @@ public class Main {
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
                             String no = input.readLine();
-                            for (int i = 0; i < cair.size(); i++) {
-                                if (cair.get(i).getKode().equals(no)) {
-                                    cair.remove(i);
-                                    System.out.println("""
-                                    O========================================O
-                                    |         Data Deleted Successfully      |
-                                    O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    ditemukan = true;
+
+                            boolean dataDipesan = false;
+                            for (int i = 0; i < dataTransaksi.size(); i++) {
+                                if (dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(no)) {
+                                        dataDipesan = true;
+                                    }
                                 }
                             }
 
-                            if (ditemukan == false) {
+                            if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |             Data Not Exist             |
+                                |          Data sedang dipesan!          |
+                                |       Tidak bisa menghapus obat!       |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
+                            } else {
+                                for (int i = 0; i < cair.size(); i++) {
+                                    if (cair.get(i).getKode().equals(no)) {
+                                        cair.remove(i);
+                                        System.out.println("""
+                                        O========================================O
+                                        |         Data Deleted Successfully      |
+                                        O========================================O""");
+                                        System.out.print("Press [enter] to continue...");
+                                        new java.util.Scanner(System.in).nextLine();
+                                        ditemukan = true;
+                                    }
+                                }
+
+                                if (ditemukan == false) {
+                                    System.out.println("""
+                                    O========================================O
+                                    |             Data Not Exist             |
+                                    O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                }
                             }
                         }
                         break;
@@ -1091,26 +1111,46 @@ public class Main {
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
                             String no = input.readLine();
-                            for (int i = 0; i < kapsul.size(); i++) {
-                                if (kapsul.get(i).getKode().equals(no)) {
-                                    kapsul.remove(i);
-                                    System.out.println("""
-                                    O========================================O
-                                    |         Data Deleted Successfully      |
-                                    O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    ditemukan = true;
+
+                            boolean dataDipesan = false;
+                            for (int i = 0; i < dataTransaksi.size(); i++) {
+                                if (dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(no)) {
+                                        dataDipesan = true;
+                                    }
                                 }
                             }
 
-                            if (ditemukan == false) {
+                            if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |             Data Not Exist             |
+                                |          Data sedang dipesan!          |
+                                |       Tidak bisa menghapus obat!       |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
+                            } else {
+                                for (int i = 0; i < kapsul.size(); i++) {
+                                    if (kapsul.get(i).getKode().equals(no)) {
+                                        kapsul.remove(i);
+                                        System.out.println("""
+                                        O========================================O
+                                        |         Data Deleted Successfully      |
+                                        O========================================O""");
+                                        System.out.print("Press [enter] to continue...");
+                                        new java.util.Scanner(System.in).nextLine();
+                                        ditemukan = true;
+                                    }
+                                }
+
+                                if (ditemukan == false) {
+                                    System.out.println("""
+                                    O========================================O
+                                    |             Data Not Exist             |
+                                    O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                }
                             }
                         }
                         break;
@@ -1134,26 +1174,46 @@ public class Main {
                             System.out.println("O========================================O");
                             System.out.print("    Input Code    : ");
                             String no = input.readLine();
-                            for (int i = 0; i < pil.size(); i++) {
-                                if (pil.get(i).getKode().equals(no)) {
-                                    pil.remove(i);
-                                    System.out.println("""
-                                    O========================================O
-                                    |         Data Deleted Successfully      |
-                                    O========================================O""");
-                                    System.out.print("Press [enter] to continue...");
-                                    new java.util.Scanner(System.in).nextLine();
-                                    ditemukan = true;
+
+                            boolean dataDipesan = false;
+                            for (int i = 0; i < dataTransaksi.size(); i++) {
+                                if (dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(no)) {
+                                        dataDipesan = true;
+                                    }
                                 }
                             }
 
-                            if (ditemukan == false) {
+                            if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |             Data Not Exist             |
+                                |          Data sedang dipesan!          |
+                                |       Tidak bisa menghapus obat!       |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
+                            } else {
+                                for (int i = 0; i < pil.size(); i++) {
+                                    if (pil.get(i).getKode().equals(no)) {
+                                        pil.remove(i);
+                                        System.out.println("""
+                                    O========================================O
+                                    |         Data Deleted Successfully      |
+                                    O========================================O""");
+                                        System.out.print("Press [enter] to continue...");
+                                        new java.util.Scanner(System.in).nextLine();
+                                        ditemukan = true;
+                                    }
+                                }
+
+                                if (ditemukan == false) {
+                                    System.out.println("""
+                                O========================================O
+                                |             Data Not Exist             |
+                                O========================================O""");
+                                    System.out.print("Press [enter] to continue...");
+                                    new java.util.Scanner(System.in).nextLine();
+                                }
                             }
                         }
                         break;
@@ -1492,8 +1552,8 @@ public class Main {
                     O========================================O
                     |              Menu Not Exist!!          |
                     O========================================O""");
-                    System.out.print("Press [enter] to continue...");
-                    new java.util.Scanner(System.in).nextLine();
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
                     }
                 }
             }
