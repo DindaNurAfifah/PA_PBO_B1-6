@@ -7,7 +7,7 @@ import static ProjectAkhir.Main.userAktif;
  *
  * @author ASUS-GK
  */
-public class ObatCair extends Obat {
+public class ObatCair extends Obat implements Dosis {
 
     private String kode;
 
@@ -40,18 +40,23 @@ public class ObatCair extends Obat {
             System.out.println("---------------------------------");
         } else {
             tampil();
-            for (User cekUser : dataUser) {
-                if (cekUser.getUsername().equals(userAktif)) {
-                    if (cekUser.getAge() < 17) {
-                        System.out.println("    Dosis         : " + this.dosisObatAnak);
-                    } else {
-                        System.out.println("    Dosis         : " + this.dosisObatDewasa);
-                    }
-                }
-            }
+            tampilDosis();
         }
         System.out.println("    Harga Obat    : Rp." + this.hargaObat);
         System.out.println("    Stok Obat     : " + this.stokObat);
         System.out.println("---------------------------------");
+    }
+
+    @Override
+    public void tampilDosis() {
+        for (User cekUser : dataUser) {
+            if (cekUser.getUsername().equals(userAktif)) {
+                if (cekUser.getAge() < 17) {
+                    System.out.println("    Dosis         : " + this.dosisObatAnak);
+                } else {
+                    System.out.println("    Dosis         : " + this.dosisObatDewasa);
+                }
+            }
+        }
     }
 }
