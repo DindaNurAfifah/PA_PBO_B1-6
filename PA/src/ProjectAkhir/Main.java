@@ -162,6 +162,7 @@ public class Main {
                     System.out.println("Welcome " + user + "!");
                     userAktif = user;
                     menuAdmin();
+                    return true;
                 } else {
                     System.out.println("\nO========================================O");
                     System.out.println("Welcome " + user + "!");
@@ -1197,7 +1198,7 @@ public class Main {
             } else {
                 switch (pilihan) {
                     case "1", "OBAT CAIR" -> {
-                        if (cair.size() < 1) {
+                        if (cair.isEmpty()) {
                             System.out.println("""
                         O========================================O
                         |               Data Is Empty            |
@@ -1246,7 +1247,7 @@ public class Main {
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                         ulang = "a";
-                                                    } else if (jumlah < 0) {
+                                                    } else if (jumlah <= 0) {
                                                         System.out.println("""
                                                   O========================================O
                                                   |             Invalid number             |
@@ -1291,7 +1292,7 @@ public class Main {
                     }
 
                     case "2", "OBAT KAPSUL" -> {
-                        if (cair.size() < 1) {
+                        if (cair.isEmpty()) {
                             System.out.println("""
                         O========================================O
                         |               Data Is Empty            |
@@ -1341,7 +1342,7 @@ public class Main {
                                                     |               Stok Kurang              |
                                                     O========================================O""");
                                                         ulang = "a";
-                                                    } else if (jumlah < 0) {
+                                                    } else if (jumlah <= 0) {
                                                         System.out.println("""
                                                   O========================================O
                                                   |             Invalid number             |
@@ -1387,7 +1388,7 @@ public class Main {
                     }
 
                     case "3", "OBAT PIL" -> {
-                        if (cair.size() < 1) {
+                        if (cair.isEmpty()) {
                             System.out.println("""
                             O========================================O
                             |               Data Is Empty            |
@@ -1438,7 +1439,7 @@ public class Main {
                                                             |               Stok Kurang              |
                                                             O========================================O""");
                                                         ulang = "a";
-                                                    } else if (jumlah < 0) {
+                                                    } else if (jumlah <= 0) {
                                                         System.out.println("""
                                                   O========================================O
                                                   |             Invalid number             |
