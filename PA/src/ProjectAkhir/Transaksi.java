@@ -7,7 +7,7 @@ import static ProjectAkhir.Main.userAktif;
  *
  * @author USERD
  */
-public class Transaksi {
+public class Transaksi implements Dosis {
 
     private String kodeObat, namaCustomer, namaObat, dosisAnak, dosisDewasa, status;
     private int jumlahObat, hargaObat;
@@ -89,6 +89,14 @@ public class Transaksi {
 
     public void tampil() {
         System.out.println(" Nama Obat     : " + this.namaObat);
+        tampilDosis();
+        System.out.println("    Harga Obat    : Rp." + this.hargaObat);
+        System.out.println("    Jumlah        : " + this.jumlahObat);
+        System.out.println("---------------------------------");
+    }
+
+    @Override
+    public void tampilDosis() {
         for (User cekUser : dataUser) {
             if (cekUser.getUsername().equals(userAktif)) {
                 if (cekUser.getAge() < 17) {
@@ -98,8 +106,5 @@ public class Transaksi {
                 }
             }
         }
-        System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-        System.out.println("    Jumlah        : " + this.jumlahObat);
-        System.out.println("---------------------------------");
     }
 }
