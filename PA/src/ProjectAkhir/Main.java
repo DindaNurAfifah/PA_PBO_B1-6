@@ -298,7 +298,7 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
                                 O========================================O
-                                |                 Add Obat               |
+                                |               Add Medicine             |
                                 O========================================O
                                 | [1] Liquid                             |
                                 | [2] Capsule                            |
@@ -319,7 +319,7 @@ public class Main {
                     case "1", "LIQUID" -> {
                         System.out.println("""
                                O========================================O
-                               |                 Add Obat               |
+                               |                Add Liquid              |
                                O========================================O""");
                         int kodeCair = kodeObatCair();
                         kode = "" + kodeCair;
@@ -376,7 +376,7 @@ public class Main {
                     case "2", "CAPSULE" -> {
                         System.out.println("""
                                O========================================O
-                               |                 Add Obat               |
+                               |                Add Capsule             |
                                O========================================O""");
                         int kodeKapsul = kodeObatKapsul();
                         kode = "" + kodeKapsul;
@@ -434,7 +434,7 @@ public class Main {
                     case "3", "PILL" -> {
                         System.out.println("""
                                O========================================O
-                               |                 Add Obat               |
+                               |                 Add Pill               |
                                O========================================O""");
                         int kodePil = kodeObatPil();
                         kode = "" + kodePil;
@@ -513,9 +513,9 @@ public class Main {
                                 O========================================O
                                 |                Read Data               |
                                 O========================================O
-                                | [1] Read Data User                     |
-                                | [2] Read Data Obat                     |
-                                | [3] Read Data Transaksi                |
+                                | [1] Data User                          |
+                                | [2] Data Medicine                      |
+                                | [3] Data Transaction                   |
                                 | [0] Exit                               |
                                 O========================================O""");
             System.out.print("  Input choice : ");
@@ -588,7 +588,7 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
                 O========================================O
-                |              Read Data Obat            |
+                |           Read Medicine Data           |
                 O========================================O
                 | 1. Liquid                              |
                 | 2. Capsule                             |
@@ -695,7 +695,7 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
                 O========================================O
-                |              Read Data Obat            |
+                |               Read Product             |
                 O========================================O
                 | 1. Liquid                              |
                 | 2. Capsule                             |
@@ -823,7 +823,7 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
                 O========================================O
-                |               Update Obat              |
+                |             Update Medicine            |
                 O========================================O
                 | [1] Liquid                             |
                 | [2] Capsule                            |
@@ -850,7 +850,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |                  Liquid                |
+                                |              Update Liquid             |
                                 O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -961,7 +961,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                         O========================================O
-                                        |                 Capsule                |
+                                        |              Update Capsule            |
                                         O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1071,7 +1071,7 @@ public class Main {
                         } else {
                             System.out.println("""
                         O========================================O
-                        |                  Pill                  |
+                        |               Update Pill              |
                         O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1197,7 +1197,7 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
             O========================================O
-            |               Delete Obat              |
+            |             Delete Medicine            |
             O========================================O
             | [1] Liquid                             |
             | [2] Capsule                            |
