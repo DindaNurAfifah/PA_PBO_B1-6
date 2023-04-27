@@ -26,23 +26,23 @@ public class ObatCair extends Obat implements Dosis {
 
     @Override
     public void tampil() {
-        System.out.println("Kode Obat     : " + this.kode);
-        System.out.println("    Nama Obat     : " + this.namaObat);
+        System.out.println("Code         : " + this.kode);
+        System.out.println("    Name         : " + this.namaObat);
     }
 
     public void tampil(boolean showDosis) {
         if (showDosis) {
             tampil();
-            System.out.println("    Dosis Anak    : " + this.dosisObatAnak);
-            System.out.println("    Dosis Dewasa  : " + this.dosisObatDewasa);
-            System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-            System.out.println("    Stok Obat     : " + this.stokObat);
+            System.out.println("    Child Dose   : " + this.dosisObatAnak);
+            System.out.println("    Adult Dose   : " + this.dosisObatDewasa);
+            System.out.println("    Price        : Rp." + this.hargaObat);
+            System.out.println("    Stock        : " + this.stokObat);
             System.out.println("---------------------------------");
         } else {
             tampil();
             tampilDosis();
-            System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-            System.out.println("    Stok Obat     : " + this.stokObat);
+            System.out.println("    Price        : Rp." + this.hargaObat);
+            System.out.println("    Stock        : " + this.stokObat);
             System.out.println("---------------------------------");
         }
     }
@@ -52,9 +52,9 @@ public class ObatCair extends Obat implements Dosis {
         for (User cekUser : dataUser) {
             if (cekUser.getUsername().equals(userAktif)) {
                 if (cekUser.getAge() < 17) {
-                    System.out.println("    Dosis         : " + this.dosisObatAnak);
+                    System.out.println("    Dose          : " + this.dosisObatAnak);
                 } else {
-                    System.out.println("    Dosis         : " + this.dosisObatDewasa);
+                    System.out.println("    Dose          : " + this.dosisObatDewasa);
                 }
             }
         }
