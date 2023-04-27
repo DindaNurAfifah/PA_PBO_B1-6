@@ -37,14 +37,13 @@ public class ObatKapsul extends Obat implements Dosis {
             System.out.println("    Dosis Dewasa  : " + this.dosisObatDewasa);
             System.out.println("    Harga Obat    : Rp." + this.hargaObat);
             System.out.println("    Stok Obat     : " + this.stokObat);
-            System.out.println("---------------------------------");
         } else {
             tampil();
             tampilDosis();
+            System.out.println("    Harga Obat    : Rp." + this.hargaObat);
+            System.out.println("    Stok Obat     : " + this.stokObat);
+            System.out.println("---------------------------------");
         }
-        System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-        System.out.println("    Stok Obat     : " + this.stokObat);
-        System.out.println("---------------------------------");
     }
 
     @Override
