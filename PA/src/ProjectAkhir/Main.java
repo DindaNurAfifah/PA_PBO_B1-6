@@ -1346,7 +1346,8 @@ public class Main {
                                     O========================================O""");
                                     } else if (cair.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |               Stok Kurang              |""");
+                                        |                Stok Habis              |
+                                        O========================================O""");
                                     } else if (beli <= cair.size()) {
                                         String nama = userAktif, kode = cair.get(beli - 1).getKode(),
                                                 Obat = cair.get(beli - 1).getNamaObat(),
@@ -1441,7 +1442,8 @@ public class Main {
                                     O========================================O""");
                                     } else if (kapsul.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |               Stok Kurang              |""");
+                                        |                Stok Habis              |
+                                        O========================================O""");
                                     } else if (beli <= kapsul.size()) {
                                         String nama = userAktif, kode = kapsul.get(beli - 1).getKode(),
                                                 Obat = kapsul.get(beli - 1).getNamaObat(),
@@ -1537,7 +1539,8 @@ public class Main {
                                     O========================================O""");
                                     } else if (pil.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |               Stok Kurang              |""");
+                                        |                Stok Habis              |
+                                        O========================================O""");
                                     } else if (beli <= pil.size()) {
                                         String nama = userAktif, kode = pil.get(beli - 1).getKode(),
                                                 Obat = pil.get(beli - 1).getNamaObat(),
