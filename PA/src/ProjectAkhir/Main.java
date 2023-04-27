@@ -1685,12 +1685,11 @@ public class Main {
                         // mengubah status transaksi menjadi sukses untuk obat cair
                         for (int i = 0; i < dataTransaksi.size(); i++) {
                             for (int j = 0; j < cair.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
-                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (cair.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
+                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(cair.get(j).getKode())) {
                                         int stok = cair.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         cair.get(j).setStokObat(stok);
-                                        dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
                             }
@@ -1699,12 +1698,11 @@ public class Main {
                         // mengubah status transaksi menjadi sukses untuk obat kapsul
                         for (int i = 0; i < dataTransaksi.size(); i++) {
                             for (int j = 0; j < kapsul.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
-                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (kapsul.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
+                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(kapsul.get(j).getKode())) {
                                         int stok = kapsul.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         kapsul.get(j).setStokObat(stok);
-                                        dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
                             }
@@ -1713,12 +1711,11 @@ public class Main {
                         // mengubah status transaksi menjadi sukses untuk obat pil
                         for (int i = 0; i < dataTransaksi.size(); i++) {
                             for (int j = 0; j < pil.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
-                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (pil.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
+                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (dataTransaksi.get(i).getKodeObat().equals(pil.get(j).getKode())) {
                                         int stok = pil.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
                                         pil.get(j).setStokObat(stok);
-                                        dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
                             }
