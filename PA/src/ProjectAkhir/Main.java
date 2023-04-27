@@ -1643,6 +1643,7 @@ public class Main {
                     }
                 }
             }
+
             System.out.println("    Total Harga   : Rp." + total);
             System.out.println("O========================================O");
             System.out.println("[1] Pembayaran");
@@ -1683,11 +1684,12 @@ public class Main {
                     if (bayar >= total) {
                         // mengubah status transaksi menjadi sukses untuk obat cair
                         for (int i = 0; i < dataTransaksi.size(); i++) {
-                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)) {
-                                for (ObatCair obatC : cair) {
-                                    if (obatC.getKode().equals(dataTransaksi.get(i).getKodeObat())) {
-                                        int stok = obatC.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        obatC.setStokObat(stok);
+                            for (int j = 0; j < cair.size(); j++) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
+                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (cair.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                        int stok = cair.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        cair.get(j).setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
@@ -1696,11 +1698,12 @@ public class Main {
 
                         // mengubah status transaksi menjadi sukses untuk obat kapsul
                         for (int i = 0; i < dataTransaksi.size(); i++) {
-                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)) {
-                                for (ObatKapsul obatK : kapsul) {
-                                    if (obatK.getKode().equals(dataTransaksi.get(i).getKodeObat())) {
-                                        int stok = obatK.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        obatK.setStokObat(stok);
+                            for (int j = 0; j < kapsul.size(); j++) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
+                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (kapsul.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                        int stok = kapsul.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        kapsul.get(j).setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
@@ -1709,11 +1712,12 @@ public class Main {
 
                         // mengubah status transaksi menjadi sukses untuk obat pil
                         for (int i = 0; i < dataTransaksi.size(); i++) {
-                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)) {
-                                for (ObatPil obatP : pil) {
-                                    if (obatP.getKode().equals(dataTransaksi.get(i).getKodeObat())) {
-                                        int stok = obatP.getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        obatP.setStokObat(stok);
+                            for (int j = 0; j < pil.size(); j++) {
+                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif) &&
+                                        dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                    if (pil.get(j).getKode().equals(dataTransaksi.get(i).getKodeObat())) {
+                                        int stok = pil.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
+                                        pil.get(j).setStokObat(stok);
                                         dataTransaksi.get(i).setStatus("Sukses");
                                     }
                                 }
