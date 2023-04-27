@@ -300,10 +300,10 @@ public class Main {
                                 O========================================O
                                 |                 Add Obat               |
                                 O========================================O
-                                | 1. Liquid                              |
-                                | 2. Capsule                             |
-                                | 3. Pill                                |
-                                | 0. Exit                                |
+                                | [1] Liquid                             |
+                                | [2] Capsule                            |
+                                | [3] Pill                               |
+                                | [0] Exit                               |
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -513,10 +513,10 @@ public class Main {
                                 O========================================O
                                 |                Read Data               |
                                 O========================================O
-                                | 1. Read Data User                      |
-                                | 2. Read Data Obat                      |
-                                | 3. Read Data Transaksi                 |
-                                | 0. Exit                                |
+                                | [1] Read Data User                     |
+                                | [2] Read Data Obat                     |
+                                | [3] Read Data Transaksi                |
+                                | [0] Exit                               |
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -689,8 +689,114 @@ public class Main {
         }
     }
 
-    public static void readDataTransaksi() {
+        public static void readDataObatUser() throws IOException {
 
+        String pilihtipe = "a";
+        while (!"0".equals(pilihtipe)) {
+            System.out.println("""
+                O========================================O
+                |              Read Data Obat            |
+                O========================================O
+                | 1. Liquid                              |
+                | 2. Capsule                             |
+                | 3. Pill                                |
+                | 0. Exit                                |
+                O========================================O""");
+            System.out.print("  Input choice : ");
+            pilihtipe = input.readLine();
+            String pilihan = pilihtipe.toUpperCase();
+            if (null == pilihan) {
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
+            } else {
+                switch (pilihan) {
+                    case "1", "LIQUID" -> {
+                        if (cair.size() < 1) {
+                            System.out.println("""
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        } else {
+                            System.out.println("""
+                                O========================================O
+                                |                  Liquid                |
+                                O========================================O""");
+                            for (int i = 0; i < cair.size(); i++) {
+                                System.out.print("[" + (i + 1) + "] ");
+                                cair.get(i).tampil(false);
+                            }
+
+                            System.out.println("O========================================O");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        }
+                    }
+                    case "2", "CAPSULE" -> {
+                        if (cair.size() < 1) {
+                            System.out.println("""
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        } else {
+                            System.out.println("""
+                                O========================================O
+                                |                 Capsule                |
+                                O========================================O""");
+                            for (int i = 0; i < kapsul.size(); i++) {
+                                System.out.print("[" + (i + 1) + "] ");
+                                kapsul.get(i).tampil(false);
+                            }
+                            System.out.println("O========================================O");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        }
+                    }
+                    case "3", "PILL" -> {
+                        if (cair.size() < 1) {
+                            System.out.println("""
+                                O========================================O
+                                |               Data Is Empty            |
+                                O========================================O""");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        } else {
+                            System.out.println("""
+                                O========================================O
+                                |                  Pill                  |
+                                O========================================O""");
+                            for (int i = 0; i < pil.size(); i++) {
+                                System.out.print("[" + (i + 1) + "] ");
+                                pil.get(i).tampil(false);
+                            }
+                            System.out.println("O========================================O");
+                            System.out.print("Press [enter] to continue...");
+                            new java.util.Scanner(System.in).nextLine();
+                        }
+                    }
+                    case "0" -> {
+                        System.out.println("");
+                    }
+                    default -> {
+                        System.out.println("""
+                            O========================================O
+                            |              Menu Not Exist!!          |
+                            O========================================O""");
+                        System.out.print("Press [enter] to continue...");
+                        new java.util.Scanner(System.in).nextLine();
+                    }
+                }
+            }
+        }
+    }
+    
+    public static void readDataTransaksi() {
         if (dataTransaksi.size() < 1) {
             System.out.println("""
                 O========================================O
@@ -706,6 +812,8 @@ public class Main {
             }
         }
     }
+    
+    
 
     public static void updateData() throws IOException {
         String pilihtipe = "a", kode;
@@ -717,10 +825,10 @@ public class Main {
                 O========================================O
                 |               Update Obat              |
                 O========================================O
-                | 1. Liquid                              |
-                | 2. Capsule                             |
-                | 3. Pill                                |
-                | 0. Exit                                |
+                | [1] Liquid                             |
+                | [2] Capsule                            |
+                | [3] Pill                               |
+                | [0] Exit                               |
                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -1091,10 +1199,10 @@ public class Main {
             O========================================O
             |               Delete Obat              |
             O========================================O
-            | 1. Liquid                              |
-            | 2. Capsule                             |
-            | 3. Pill                                |
-            | 0. Exit                                |
+            | [1] Liquid                             |
+            | [2] Capsule                            |
+            | [3] Pill                               |
+            | [0] Exit                               |
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -1324,10 +1432,10 @@ public class Main {
             O========================================O
             |                   Buy                  |
             O========================================O
-            | 1. Liquid                              |
-            | 2. Capsule                             |
-            | 3. Pill                                |
-            | 0. Exit                                |
+            | [1] Liquid                              |
+            | [2] Capsule                             |
+            | [3] Pill                                |
+            | [0] Exit                                |
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
@@ -1672,9 +1780,9 @@ public class Main {
 
             System.out.println("    Total Price   : Rp." + total);
             System.out.println("O========================================O");
-            System.out.println("[1] Payment");
-            System.out.println("[2] Clear Cart");
-            System.out.println("[0] Exit");
+            System.out.println("| [1] Payment                            |");                         
+            System.out.println("| [2] Clear Cart                         |");
+            System.out.println("| [0] Exit                               |");
             System.out.println("O========================================O");
             System.out.print("    Input         : ");
             String pilihan = input.readLine();
@@ -1718,7 +1826,7 @@ public class Main {
 
                         int kembali = bayar - total;
                         System.out.println("O========================================O");
-                        System.out.println("        Change     : Rp. " + kembali);
+                        System.out.println("  |     Change     : Rp. " + kembali);
                         System.out.println("O========================================O");
                     }
                 }
@@ -1814,8 +1922,8 @@ public class Main {
 
         System.out.println("------------------------------------------");
         System.out.println("""
-                           [1] Update Profile
-                           [0] Exit""");
+                           | [1] Update Profile
+                           | [0] Exit""");
         System.out.println("------------------------------------------");
         System.out.print("    Input : ");
 
@@ -1890,11 +1998,11 @@ public class Main {
                                O========================================O
                                |     Aplikasi Apotek Chemical Farma     |
                                O========================================O
-                               | 1. Profile                             |
-                               | 2. Product                             |
-                               | 3. Buy                                 |
-                               | 4. Cart                                |
-                               | 0. Log Out                             |
+                               | [1] Profile                            |
+                               | [2] Product                            |
+                               | [3] Buy                                |
+                               | [4] Cart                               |
+                               | [0] Log Out                            |
                                O========================================O""");
             System.out.print("  Input choice : ");
             pilih = input.readLine();
@@ -1911,7 +2019,7 @@ public class Main {
                     }
                     
                     case "2", "PRODUCT" -> {
-                        readDataObat();
+                        readDataObatUser();
                     }
 
                     case "3", "BUY" -> {
