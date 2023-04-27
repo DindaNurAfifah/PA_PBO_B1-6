@@ -215,7 +215,9 @@ public class Main {
                     } else {
                         System.out.println("""
                       O========================================O
-                      |         Successful Registration        |""");
+                      |         Successful Registration        |
+                      O========================================O
+                      """);
                         User addUser = new User(user, pass, alamat, email, age);
                         dataUser.add(addUser);
                     }
@@ -298,20 +300,23 @@ public class Main {
                                 O========================================O
                                 |                 Add Obat               |
                                 O========================================O
-                                | 1. Obat Cair                           |
-                                | 2. Obat Kapsul                         |
-                                | 3. Obat Pil                            |
+                                | 1. Liquid                              |
+                                | 2. Capsule                             |
+                                | 3. Pill                                |
                                 | 0. Exit                                |
                                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
-
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
-                    case "1", "OBAT CAIR" -> {
+                    case "1", "LIQUID" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -368,7 +373,7 @@ public class Main {
 
                     }
 
-                    case "2", "OBAT KAPSUL" -> {
+                    case "2", "CAPSULE" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -426,7 +431,7 @@ public class Main {
 
                     }
 
-                    case "3", "OBAT PIL" -> {
+                    case "3", "PILL" -> {
                         System.out.println("""
                                O========================================O
                                |                 Add Obat               |
@@ -517,8 +522,11 @@ public class Main {
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
-
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
                     case "1", "READ DATA USER" ->
@@ -582,19 +590,23 @@ public class Main {
                 O========================================O
                 |              Read Data Obat            |
                 O========================================O
-                | 1. Obat Cair                           |
-                | 2. Obat Kapsul                         |
-                | 3. Obat Pil                            |
+                | 1. Liquid                              |
+                | 2. Capsule                             |
+                | 3. Pill                                |
                 | 0. Exit                                |
                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
-                    case "1", "OBAT CAIR" -> {
+                    case "1", "LIQUID" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
                                 O========================================O
@@ -605,7 +617,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |                Obat Cair               |
+                                |                  Liquid                |
                                 O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -617,7 +629,7 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         }
                     }
-                    case "2", "OBAT KAPSUL" -> {
+                    case "2", "CAPSULE" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
                                 O========================================O
@@ -628,7 +640,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |               Obat Kapsul              |
+                                |                 Capsule                |
                                 O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -639,7 +651,7 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         }
                     }
-                    case "3", "OBAT PIL" -> {
+                    case "3", "PILL" -> {
                         if (cair.size() < 1) {
                             System.out.println("""
                                 O========================================O
@@ -650,7 +662,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |                 Obat Pil               |
+                                |                  Pill                  |
                                 O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -705,19 +717,23 @@ public class Main {
                 O========================================O
                 |               Update Obat              |
                 O========================================O
-                | 1. Obat Cair                           |
-                | 2. Obat Kapsul                         |
-                | 3. Obat Pil                            |
+                | 1. Liquid                              |
+                | 2. Capsule                             |
+                | 3. Pill                                |
                 | 0. Exit                                |
                 O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
-                    case "1", "OBAT CAIR" -> {
+                    case "1", "LIQUID" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
                                 O========================================O
@@ -726,7 +742,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |                 Obat Cair              |
+                                |                  Liquid                |
                                 O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -828,7 +844,7 @@ public class Main {
                         break;
                     }
 
-                    case "2", "OBAT KAPSUL" -> {
+                    case "2", "CAPSULE" -> {
                         if (kapsul.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -837,7 +853,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                         O========================================O
-                                        |               Obat Kapsul              |
+                                        |                 Capsule                |
                                         O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -899,7 +915,6 @@ public class Main {
 
                                                         obatKapsul.setHargaObat(harga);
                                                         obatKapsul.setStokObat(stok);
-
                                                         System.out.println("""
                                           O========================================O
                                           |        Data Changed Successfully       |
@@ -939,7 +954,7 @@ public class Main {
                         break;
                     }
 
-                    case "3", "OBAT PIL" -> {
+                    case "3", "PILL" -> {
                         if (pil.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -948,7 +963,7 @@ public class Main {
                         } else {
                             System.out.println("""
                         O========================================O
-                        |                 Obat Pil               |
+                        |                  Pill                  |
                         O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1076,19 +1091,23 @@ public class Main {
             O========================================O
             |               Delete Obat              |
             O========================================O
-            | 1. Obat Cair                           |
-            | 2. Obat Kapsul                         |
-            | 3. Obat Pil                            |
+            | 1. Liquid                              |
+            | 2. Capsule                             |
+            | 3. Pill                                |
             | 0. Exit                                |
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
-                    case "1", "OBAT CAIR" -> {
+                    case "1", "LIQUID" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -1099,7 +1118,7 @@ public class Main {
                         } else {
                             System.out.println("""
                             O========================================O
-                            |                 Obat Cair              |
+                            |                  Liquid                |
                             O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1153,7 +1172,7 @@ public class Main {
                         break;
                     }
 
-                    case "2", "OBAT KAPSUL" -> {
+                    case "2", "CAPSULE" -> {
                         if (kapsul.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -1162,7 +1181,7 @@ public class Main {
                         } else {
                             System.out.println("""
                             O========================================O
-                            |                Obat Kapsul             |
+                            |                 Capsule                |
                             O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1216,7 +1235,7 @@ public class Main {
                         break;
                     }
 
-                    case "3", "OBAT PIL" -> {
+                    case "3", "PILL" -> {
                         if (pil.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -1225,7 +1244,7 @@ public class Main {
                         } else {
                             System.out.println("""
                             O========================================O
-                            |                 Obat Pil               |
+                            |                  Pill                  |
                             O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1303,21 +1322,25 @@ public class Main {
         while (!"0".equals(pilihtipe)) {
             System.out.println("""
             O========================================O
-            |                Beli Obat               |
+            |                   Buy                  |
             O========================================O
-            | 1. Obat Cair                           |
-            | 2. Obat Kapsul                         |
-            | 3. Obat Pil                            |
+            | 1. Liquid                              |
+            | 2. Capsule                             |
+            | 3. Pill                                |
             | 0. Exit                                |
             O========================================O""");
             System.out.print("  Input choice : ");
             pilihtipe = input.readLine();
             String pilihan = pilihtipe.toUpperCase();
             if (null == pilihan) {
-                System.out.println(" Wrong Input! ");
+                System.out.println("O========================================O");
+                System.out.println("|             Invalid choice             |");
+                System.out.println("O========================================O");
+                System.out.print("Press [enter] to continue...");
+                new java.util.Scanner(System.in).nextLine();
             } else {
                 switch (pilihan) {
-                    case "1", "OBAT CAIR" -> {
+                    case "1", "LIQUID" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
                         O========================================O
@@ -1328,7 +1351,7 @@ public class Main {
                         } else {
                             System.out.println("""
                         O========================================O
-                        |                 Obat Cair              |
+                        |                  Liquid                |
                         O========================================O""");
                             for (int i = 0; i < cair.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1412,7 +1435,7 @@ public class Main {
                         }
                     }
 
-                    case "2", "OBAT KAPSUL" -> {
+                    case "2", "CAPSULE" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
                         O========================================O
@@ -1423,7 +1446,7 @@ public class Main {
                         } else {
                             System.out.println("""
                         O========================================O
-                        |               Obat Kapsul              |
+                        |                 Capsule                |
                         O========================================O""");
                             for (int i = 0; i < kapsul.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1509,7 +1532,7 @@ public class Main {
                         }
                     }
 
-                    case "3", "OBAT PIL" -> {
+                    case "3", "PILL" -> {
                         if (cair.isEmpty()) {
                             System.out.println("""
                             O========================================O
@@ -1520,7 +1543,7 @@ public class Main {
                         } else {
                             System.out.println("""
                         O========================================O
-                        |                 Obat Pil               |
+                        |                  Pill                  |
                         O========================================O""");
                             for (int i = 0; i < pil.size(); i++) {
                                 System.out.print("[" + (i + 1) + "] ");
@@ -1649,8 +1672,8 @@ public class Main {
 
             System.out.println("    Total Price   : Rp." + total);
             System.out.println("O========================================O");
-            System.out.println("[1] Pembayaran");
-            System.out.println("[2] Bersihkan Keranjang");
+            System.out.println("[1] Payment");
+            System.out.println("[2] Clear Cart");
             System.out.println("[0] Exit");
             System.out.println("O========================================O");
             System.out.print("    Input         : ");
@@ -1658,7 +1681,7 @@ public class Main {
             String pilih = pilihan.toUpperCase();
             System.out.println("O========================================O");
             switch (pilih) {
-                case "1", "PEMBAYARAN" -> {
+                case "1", "PAYMENT" -> {
                     int bayar = 1;
                     while (bayar < total) {
                         boolean isValidInput;
@@ -1700,7 +1723,7 @@ public class Main {
                     }
                 }
 
-                case "2", "BERSIHKAN KERANJANG" -> {
+                case "2", "CLEAR CART" -> {
 
                     // mengembalikan stok obat cair
                     for (int i = 0; i < dataTransaksi.size(); i++) {
@@ -1769,7 +1792,7 @@ public class Main {
 
         } else {
             System.out.println("""
-            |               No Purchased             |
+            |              No Purchased              |
             O========================================O""");
         }
 
@@ -1791,7 +1814,7 @@ public class Main {
 
         System.out.println("------------------------------------------");
         System.out.println("""
-                           [1] Edit Profil
+                           [1] Update Profile
                            [0] Exit""");
         System.out.println("------------------------------------------");
         System.out.print("    Input : ");
@@ -1800,7 +1823,7 @@ public class Main {
         String pilihan = pilih.toUpperCase();
         System.out.println("O========================================O");
         switch (pilihan) {
-            case "1", "EDIT PROFIL" -> {
+                case "1", "UPDATE PROFILE" -> {
                 System.out.print("  Username           : ");
                 String userBaru = input.readLine();
                 System.out.print("  Password           : ");
@@ -1867,9 +1890,10 @@ public class Main {
                                O========================================O
                                |     Aplikasi Apotek Chemical Farma     |
                                O========================================O
-                               | 1. Profil                              |
-                               | 2. Beli Obat                           |
-                               | 3. Keranjang Belanja                   |
+                               | 1. Profile                             |
+                               | 2. Product                             |
+                               | 3. Buy                                 |
+                               | 4. Cart                                |
                                | 0. Log Out                             |
                                O========================================O""");
             System.out.print("  Input choice : ");
@@ -1885,12 +1909,16 @@ public class Main {
                     case "1", "PROFIL" -> {
                         updateProfil();
                     }
+                    
+                    case "2", "PRODUCT" -> {
+                        readDataObat();
+                    }
 
-                    case "2", "BELI OBAT" -> {
+                    case "3", "BUY" -> {
                         pembelian();
                     }
 
-                    case "3", "KERANJANG BELANJA" -> {
+                    case "4", "CART" -> {
                         keranjang();
                     }
 
