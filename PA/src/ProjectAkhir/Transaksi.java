@@ -88,10 +88,10 @@ public class Transaksi implements Dosis {
     }
 
     public void tampil() {
-        System.out.println(" Nama Obat     : " + this.namaObat);
+        System.out.println("    Name         : " + this.namaObat);
         tampilDosis();
-        System.out.println("    Harga Obat    : Rp." + this.hargaObat);
-        System.out.println("    Jumlah        : " + this.jumlahObat);
+        System.out.println("    Price         : Rp." + this.hargaObat);
+        System.out.println("    Total Price   : " + this.jumlahObat);
         System.out.println("---------------------------------");
     }
 
@@ -100,9 +100,9 @@ public class Transaksi implements Dosis {
         for (User cekUser : dataUser) {
             if (cekUser.getUsername().equals(userAktif)) {
                 if (cekUser.getAge() < 17) {
-                    System.out.println("    Dosis         : " + this.dosisAnak);
+                    System.out.println("    Dose          : " + this.dosisAnak);
                 } else {
-                    System.out.println("    Dosis         : " + this.dosisDewasa);
+                    System.out.println("    Dose          : " + this.dosisDewasa);
                 }
             }
         }
