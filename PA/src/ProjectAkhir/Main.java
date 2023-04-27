@@ -324,16 +324,16 @@ public class Main {
                         int kodeCair = kodeObatCair();
                         kode = "" + kodeCair;
 
-                        System.out.print("  Nama Obat          : ");
+                        System.out.print("  Name               : ");
                         nama = input.readLine();
-                        System.out.print("  Dosis Anak         : ");
+                        System.out.print("  Child Dose         : ");
                         dosisAnak = input.readLine();
-                        System.out.print("  Dosis Dewasa       : ");
+                        System.out.print("  Adult Dose         : ");
                         dosisDewasa = input.readLine();
                         boolean isValidInput;
                         do {
                             try {
-                                System.out.print("  Harga Obat         : Rp.");
+                                System.out.print("  Price              : Rp.");
                                 harga = Integer.parseInt(input.readLine());
                                 if (harga < 1) {
                                     throw new NumberFormatException();
@@ -342,7 +342,7 @@ public class Main {
                                 }
                                 do {
                                     try {
-                                        System.out.print("  Stok Obat          : ");
+                                        System.out.print("  Stock               : ");
                                         stok = Integer.parseInt(input.readLine());
                                         if (stok < 1) {
                                             throw new NumberFormatException();
@@ -381,16 +381,16 @@ public class Main {
                         int kodeKapsul = kodeObatKapsul();
                         kode = "" + kodeKapsul;
 
-                        System.out.print("  Nama Obat          : ");
+                        System.out.print("  Name               : ");
                         nama = input.readLine();
-                        System.out.print("  Dosis Anak         : ");
+                        System.out.print("  Child Dose         : ");
                         dosisAnak = input.readLine();
-                        System.out.print("  Dosis Dewasa       : ");
+                        System.out.print("  Adult Dose         : ");
                         dosisDewasa = input.readLine();
                         boolean isValidInput;
                         do {
                             try {
-                                System.out.print("  Harga Obat         : Rp.");
+                                System.out.print("  Price              : Rp.");
                                 harga = Integer.parseInt(input.readLine());
                                 if (harga < 1) {
                                     throw new NumberFormatException();
@@ -399,7 +399,7 @@ public class Main {
                                 }
                                 do {
                                     try {
-                                        System.out.print("  Stok Obat          : ");
+                                    System.out.print("  Stock              : ");
                                         stok = Integer.parseInt(input.readLine());
                                         if (stok < 1) {
                                             throw new NumberFormatException();
@@ -439,16 +439,16 @@ public class Main {
                         int kodePil = kodeObatPil();
                         kode = "" + kodePil;
 
-                        System.out.print("  Nama Obat          : ");
+                        System.out.print("  Name               : ");
                         nama = input.readLine();
-                        System.out.print("  Dosis Anak         : ");
+                        System.out.print("  Child Dose         : ");
                         dosisAnak = input.readLine();
-                        System.out.print("  Dosis Dewasa       : ");
+                        System.out.print("  Adult Dose         : ");
                         dosisDewasa = input.readLine();
                         boolean isValidInput;
                         do {
                             try {
-                                System.out.print("  Harga Obat         : Rp.");
+                                System.out.print("  Price              : Rp.");
                                 harga = Integer.parseInt(input.readLine());
                                 if (harga < 1) {
                                     throw new NumberFormatException();
@@ -457,7 +457,7 @@ public class Main {
                                 }
                                 do {
                                     try {
-                                        System.out.print("  Stok Obat          : ");
+                                        System.out.print("  Stock              : ");
                                         stok = Integer.parseInt(input.readLine());
                                         if (stok < 1) {
                                             throw new NumberFormatException();
@@ -884,16 +884,16 @@ public class Main {
                                         kode = "C" + kodeCair;
                                         obatCair.setKode(kode);
 
-                                        System.out.print("  Nama Obat          : ");
+                                        System.out.print("  Name               : ");
                                         obatCair.setNamaObat(input.readLine());
-                                        System.out.print("  Dosis Anak         : ");
+                                        System.out.print("  Child Dose         : ");
                                         obatCair.setDosisObatAnak(input.readLine());
-                                        System.out.print("  Dosis Dewasa       : ");
+                                        System.out.print("  Adult Dose       : ");
                                         obatCair.setDosisObatDewasa(input.readLine());
                                         boolean isValidInput;
                                         do {
                                             try {
-                                                System.out.print("  Harga Obat         : Rp.");
+                                                System.out.print("  Price              : Rp.");
                                                 harga = Integer.parseInt(input.readLine());
                                                 if (harga < 1) {
                                                     throw new NumberFormatException();
@@ -902,7 +902,7 @@ public class Main {
                                                 }
                                                 do {
                                                     try {
-                                                        System.out.print("  Stok Obat          : ");
+                                                        System.out.print("  Stock              : ");
                                                         stok = Integer.parseInt(input.readLine());
                                                         if (stok < 1) {
                                                             throw new NumberFormatException();
@@ -995,16 +995,16 @@ public class Main {
                                         kode = "P" + kodeKapsul;
                                         obatKapsul.setKode(kode);
 
-                                        System.out.print("  Nama Obat          : ");
+                                        System.out.print("  Name               : ");
                                         obatKapsul.setNamaObat(input.readLine());
-                                        System.out.print("  Dosis Anak         : ");
+                                        System.out.print("  Child Dose         : ");
                                         obatKapsul.setDosisObatAnak(input.readLine());
-                                        System.out.print("  Dosis Dewasa       : ");
+                                        System.out.print("  Adult Dose         : ");
                                         obatKapsul.setDosisObatDewasa(input.readLine());
                                         boolean isValidInput;
                                         do {
                                             try {
-                                                System.out.print("  Harga Obat         : Rp.");
+                                                System.out.print("  Price              : Rp.");
                                                 harga = Integer.parseInt(input.readLine());
                                                 if (harga < 1) {
                                                     throw new NumberFormatException();
@@ -1013,7 +1013,7 @@ public class Main {
                                                 }
                                                 do {
                                                     try {
-                                                        System.out.print("  Stok Obat          : ");
+                                                        System.out.print("  Stock              : ");
                                                         stok = Integer.parseInt(input.readLine());
                                                         if (stok < 1) {
                                                             throw new NumberFormatException();
@@ -1105,16 +1105,16 @@ public class Main {
                                         kode = "P" + kodePil;
                                         obatPil.setKode(kode);
 
-                                        System.out.print("  Nama Obat          : ");
+                                        System.out.print("  Name               : ");
                                         obatPil.setNamaObat(input.readLine());
-                                        System.out.print("  Dosis Anak         : ");
+                                        System.out.print("  Child Dose         : ");
                                         obatPil.setDosisObatAnak(input.readLine());
-                                        System.out.print("  Dosis Dewasa       : ");
+                                        System.out.print("  Adult Dose       : ");
                                         obatPil.setDosisObatDewasa(input.readLine());
                                         boolean isValidInput;
                                         do {
                                             try {
-                                                System.out.print("  Harga Obat         : Rp.");
+                                                System.out.print("  Price              : Rp.");
                                                 harga = Integer.parseInt(input.readLine());
                                                 if (harga < 1) {
                                                     throw new NumberFormatException();
@@ -1123,7 +1123,7 @@ public class Main {
                                                 }
                                                 do {
                                                     try {
-                                                        System.out.print("  Stok Obat          : ");
+                                                        System.out.print("  Stock              : ");
                                                         stok = Integer.parseInt(input.readLine());
                                                         if (stok < 1) {
                                                             throw new NumberFormatException();
