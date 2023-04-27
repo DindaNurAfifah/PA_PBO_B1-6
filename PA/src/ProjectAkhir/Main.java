@@ -1682,42 +1682,11 @@ public class Main {
                     }
 
                     if (bayar >= total) {
-                        // mengubah status transaksi menjadi sukses untuk obat cair
+                        // mengubah status transaksi menjadi sukses
                         for (int i = 0; i < dataTransaksi.size(); i++) {
-                            for (int j = 0; j < cair.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
-                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (dataTransaksi.get(i).getKodeObat().equals(cair.get(j).getKode())) {
-                                        int stok = cair.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        cair.get(j).setStokObat(stok);
-                                    }
-                                }
-                            }
-                        }
-
-                        // mengubah status transaksi menjadi sukses untuk obat kapsul
-                        for (int i = 0; i < dataTransaksi.size(); i++) {
-                            for (int j = 0; j < kapsul.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
-                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (dataTransaksi.get(i).getKodeObat().equals(kapsul.get(j).getKode())) {
-                                        int stok = kapsul.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        kapsul.get(j).setStokObat(stok);
-                                    }
-                                }
-                            }
-                        }
-
-                        // mengubah status transaksi menjadi sukses untuk obat pil
-                        for (int i = 0; i < dataTransaksi.size(); i++) {
-                            for (int j = 0; j < pil.size(); j++) {
-                                if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
-                                        && dataTransaksi.get(i).getStatus().equals("Proses")) {
-                                    if (dataTransaksi.get(i).getKodeObat().equals(pil.get(j).getKode())) {
-                                        int stok = pil.get(j).getStokObat() - dataTransaksi.get(i).getJumlahObat();
-                                        pil.get(j).setStokObat(stok);
-                                    }
-                                }
+                            if (dataTransaksi.get(i).getNamaCustomer().equals(userAktif)
+                                    && dataTransaksi.get(i).getStatus().equals("Proses")) {
+                                dataTransaksi.get(i).setStatus("Sukses");
                             }
                         }
 
