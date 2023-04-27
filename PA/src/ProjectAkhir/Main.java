@@ -79,7 +79,7 @@ public class Main {
                         } else {
                             System.out.println("""
                                 O========================================O
-                                |             Account not found          | 
+                                |             Account Not Found          | 
                                 O========================================O
                                 """);
                         }
@@ -89,7 +89,7 @@ public class Main {
                     case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
-                        System.out.println("|         Thank you for visiting         |");
+                        System.out.println("|         Thank You For Visiting         |");
                         System.out.println("O========================================O");
                         System.exit(0);
                     }
@@ -270,7 +270,7 @@ public class Main {
                     case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
-                        System.out.println("|         Thank you for visiting         |");
+                        System.out.println("|         Thank You For Visiting         |");
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
@@ -348,19 +348,19 @@ public class Main {
                                         cair.add(addCair);
                                         System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |""");
+                                          |         Data Successfully Added        |""");
                                         break;
                                     } catch (NumberFormatException e) {
                                         System.out.println("""
                                           O========================================O
-                                          |    Invalid input! Enter with number    |""");
+                                          |    Invalid Input! Enter With Number    |""");
                                         isValidInput = false;
                                     }
                                 } while (!isValidInput);
                             } catch (NumberFormatException e) {
                                 System.out.println("""
                                           O========================================O
-                                          |    Invalid input! Enter with number    |
+                                          |    Invalid input! Enter With Number    |
                                           O========================================O""");
                                 isValidInput = false;
                             }
@@ -405,12 +405,12 @@ public class Main {
                                         kapsul.add(addKapsul);
                                         System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |""");
+                                          |         Data Successfully Added        |""");
                                         break;
                                     } catch (NumberFormatException e) {
                                         System.out.println("""
                                           O========================================O
-                                          |    Invalid input! Enter with number    |
+                                          |    Invalid input! Enter With Number    |
                                           O========================================O""");
                                         isValidInput = false;
                                     }
@@ -418,7 +418,7 @@ public class Main {
                             } catch (NumberFormatException e) {
                                 System.out.println("""
                                           O========================================O
-                                          |    Invalid input! Enter with number    |
+                                          |    Invalid input! Enter With Number    |
                                           O========================================O""");
                                 isValidInput = false;
                             }
@@ -463,7 +463,7 @@ public class Main {
                                         pil.add(addPil);
                                         System.out.println("""
                                           O========================================O
-                                          |         Data successfully added        |""");
+                                          |         Data Successfully Added        |""");
                                         break;
                                     } catch (NumberFormatException e) {
                                         System.out.println("""
@@ -748,8 +748,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |        Tidak bisa mengubah obat        |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -859,8 +859,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |        Tidak bisa mengubah obat        |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -970,8 +970,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |        Tidak bisa mengubah obat        |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -1121,8 +1121,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |       Tidak bisa menghapus obat!       |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -1184,8 +1184,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |       Tidak bisa menghapus obat!       |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -1247,8 +1247,8 @@ public class Main {
                             if (dataDipesan) {
                                 System.out.println("""
                                 O========================================O
-                                |          Data sedang dipesan!          |
-                                |       Tidak bisa menghapus obat!       |
+                                |            Data Is On Order!           |
+                                |            Unable To Change            |
                                 O========================================O""");
                                 System.out.print("Press [enter] to continue...");
                                 new java.util.Scanner(System.in).nextLine();
@@ -1346,7 +1346,7 @@ public class Main {
                                     O========================================O""");
                                     } else if (cair.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |                Stok Habis              |
+                                        |               Out Of Stock             |
                                         O========================================O""");
                                     } else if (beli <= cair.size()) {
                                         String nama = userAktif, kode = cair.get(beli - 1).getKode(),
@@ -1360,12 +1360,12 @@ public class Main {
                                             boolean isValidInput1;
                                             do {
                                                 try {
-                                                    System.out.print("  Jumlah pembelian: ");
+                                                    System.out.print("  Total Buy : ");
                                                     int jumlah = Integer.parseInt(input.readLine());
                                                     System.out.println("O========================================O");
                                                     if (jumlah > cair.get(beli - 1).getStokObat()) {
                                                         System.out.println("""
-                                                    |               Stok Kurang              |
+                                                    |              Out Of Stock              |
                                                     O========================================O""");
                                                         ulang = "a";
                                                     } else if (jumlah <= 0) {
@@ -1376,7 +1376,7 @@ public class Main {
                                                         ulang = "a";
                                                     } else {
                                                         System.out.println("""
-                                                  |         Menambah ke Keranjang!         |
+                                                  |             Added To Cart!             |
                                                   O========================================O""");
                                                         int stok = cair.get(beli - 1).getStokObat() - jumlah;
                                                         cair.get(beli - 1).setStokObat(stok);
@@ -1442,7 +1442,7 @@ public class Main {
                                     O========================================O""");
                                     } else if (kapsul.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |                Stok Habis              |
+                                        |                Out Of Stock              |
                                         O========================================O""");
                                     } else if (beli <= kapsul.size()) {
                                         String nama = userAktif, kode = kapsul.get(beli - 1).getKode(),
@@ -1456,12 +1456,12 @@ public class Main {
                                             boolean isValidInput1;
                                             do {
                                                 try {
-                                                    System.out.print("  Jumlah pembelian: ");
+                                                    System.out.print("  Total Buy : ");
                                                     int jumlah = Integer.parseInt(input.readLine());
                                                     System.out.println("O========================================O");
                                                     if (jumlah > kapsul.get(beli - 1).getStokObat()) {
                                                         System.out.println("""
-                                                    |               Stok Kurang              |
+                                                    |               Out Of Stock             |
                                                     O========================================O""");
                                                         ulang = "a";
                                                     } else if (jumlah <= 0) {
@@ -1472,7 +1472,7 @@ public class Main {
                                                         ulang = "a";
                                                     } else {
                                                         System.out.println("""
-                                                  |         Menambah ke Keranjang!         |
+                                                  |              Added To Cart!            |
                                                   O========================================O""");
                                                         int stok = kapsul.get(beli - 1).getStokObat() - jumlah;
                                                         kapsul.get(beli - 1).setStokObat(stok);
@@ -1539,7 +1539,7 @@ public class Main {
                                     O========================================O""");
                                     } else if (pil.get(beli - 1).getStokObat() == 0) {
                                         System.out.println("""
-                                        |                Stok Habis              |
+                                        |               Out Of Stock             |
                                         O========================================O""");
                                     } else if (beli <= pil.size()) {
                                         String nama = userAktif, kode = pil.get(beli - 1).getKode(),
@@ -1554,12 +1554,12 @@ public class Main {
                                             boolean isValidInput1;
                                             do {
                                                 try {
-                                                    System.out.print("  Jumlah pembelian: ");
+                                                    System.out.print("  Total Buy : ");
                                                     int jumlah = Integer.parseInt(input.readLine());
                                                     System.out.println("O========================================O");
                                                     if (jumlah > pil.get(beli - 1).stokObat) {
                                                         System.out.println("""
-                                                            |               Stok Kurang              |
+                                                            |               Out Of Stock             |
                                                             O========================================O""");
                                                         ulang = "a";
                                                     } else if (jumlah <= 0) {
@@ -1570,7 +1570,7 @@ public class Main {
                                                         ulang = "a";
                                                     } else {
                                                         System.out.println("""
-                                                  |         Menambah ke Keranjang!         |
+                                                  |              Added To Cart!            |
                                                   O========================================O""");
                                                         int stok = pil.get(beli - 1).getStokObat() - jumlah;
                                                         pil.get(beli - 1).setStokObat(stok);
@@ -1647,7 +1647,7 @@ public class Main {
                 }
             }
 
-            System.out.println("    Total Harga   : Rp." + total);
+            System.out.println("    Total Price   : Rp." + total);
             System.out.println("O========================================O");
             System.out.println("[1] Pembayaran");
             System.out.println("[2] Bersihkan Keranjang");
@@ -1664,7 +1664,7 @@ public class Main {
                         boolean isValidInput;
                         do {
                             try {
-                                System.out.println("    Total Harga   : Rp." + total);
+                                System.out.println("    Total Price   : Rp." + total);
                                 System.out.print("    Input         : Rp.");
                                 bayar = Integer.parseInt(input.readLine());
                                 isValidInput = true;
@@ -1679,7 +1679,7 @@ public class Main {
                         if (bayar < total) {
                             System.out.println("""
                             O========================================O
-                            |             Uang Anda Kurang!          |
+                            |             Not Enough Money!          |
                             O========================================O""");
                         }
                     }
@@ -1695,7 +1695,7 @@ public class Main {
 
                         int kembali = bayar - total;
                         System.out.println("O========================================O");
-                        System.out.println("    Kembalian     : Rp. " + kembali);
+                        System.out.println("        Change     : Rp. " + kembali);
                         System.out.println("O========================================O");
                     }
                 }
@@ -1750,7 +1750,7 @@ public class Main {
                         }
                     }
 
-                    System.out.println("Keranjang Telah Dibersihkan!");
+                    System.out.println("|          Cart Has Been Cleared!        |");
                     System.out.println("O========================================O");
                 }
 
@@ -1769,7 +1769,7 @@ public class Main {
 
         } else {
             System.out.println("""
-            |        Pembelian Belum dilakukan       |
+            |               No Purchased             |
             O========================================O""");
         }
 
@@ -1877,7 +1877,7 @@ public class Main {
             String pilihan = pilih.toUpperCase();
             if (null == pilihan) {
                 System.out.println("O========================================O");
-                System.out.println("|             Invalid choice             |");
+                System.out.println("|             Invalid Choice             |");
                 System.out.println("O========================================O");
 
             } else {
@@ -1897,7 +1897,7 @@ public class Main {
                     case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
-                        System.out.println("|         Thank you for visiting         |");
+                        System.out.println("|         Thank You For Visiting         |");
                         System.out.println("O========================================O");
                         System.out.print("Press [enter] to continue...");
                         new java.util.Scanner(System.in).nextLine();
