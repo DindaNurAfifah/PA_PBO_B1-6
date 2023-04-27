@@ -46,7 +46,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         String pilihan = "a";
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                 O========================================O
                 |     Aplikasi Apotek Chemical Farma     |
@@ -86,7 +86,7 @@ public class Main {
                         break;
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank You For Visiting         |");
@@ -234,7 +234,7 @@ public class Main {
 
     public static void menuAdmin() throws IOException {
         String pilihan = "a";
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                 O========================================O
                 |     Aplikasi Apotek Chemical Farma     |
@@ -269,7 +269,7 @@ public class Main {
                     case "4", "DELETE DATA" ->
                         deleteData();
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank You For Visiting         |");
@@ -295,7 +295,7 @@ public class Main {
         String pilihan = "a", nama, kode, dosisAnak, dosisDewasa;
         int stok, harga;
 
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                                 O========================================O
                                 |               Add Medicine             |
@@ -487,7 +487,7 @@ public class Main {
                         } while (!isValidInput);
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                     }
 
@@ -507,7 +507,7 @@ public class Main {
     public static void readData() throws IOException {
         String pilihan = "a";
 
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                                 O========================================O
                                 |                Read Data               |
@@ -537,7 +537,7 @@ public class Main {
                     case "3", "DATA TRANSACTION" ->
                         readDataTransaksi();
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                     }
 
@@ -584,7 +584,7 @@ public class Main {
     public static void readDataObat() throws IOException {
 
         String pilihan = "a";
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                 O========================================O
                 |           Read Medicine Data           |
@@ -672,7 +672,7 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         }
                     }
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                     }
                     
                     default -> {
@@ -691,7 +691,7 @@ public class Main {
     public static void readDataObatUser() throws IOException {
 
         String pilihan = "a";
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                 O========================================O
                 |               Read Product             |
@@ -780,7 +780,7 @@ public class Main {
                             new java.util.Scanner(System.in).nextLine();
                         }
                     }
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                     }
 
@@ -827,7 +827,7 @@ public class Main {
         int stok, harga;
         boolean ditemukan = false;
 
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                 O========================================O
                 |             Update Medicine            |
@@ -1180,7 +1180,7 @@ public class Main {
                         break;
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                     }
 
@@ -1201,7 +1201,7 @@ public class Main {
         String pilihan = "a";
         boolean ditemukan = false;
 
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
             O========================================O
             |             Delete Medicine            |
@@ -1413,8 +1413,9 @@ public class Main {
                         break;
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
+                        break;
                     }
 
                     default -> {
@@ -1434,7 +1435,7 @@ public class Main {
         String pilihan = "a";
         int jumlah_data = 0;
 
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
             O========================================O
             |                   Buy                  |
@@ -1745,7 +1746,7 @@ public class Main {
                         }
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                     }
                     default -> {
@@ -1892,7 +1893,7 @@ public class Main {
                     System.out.println("O========================================O");
                 }
 
-                case "0", "EXIT" -> {
+                case "0" -> {
                     System.out.println("");
                 }
 
@@ -1982,7 +1983,7 @@ public class Main {
 
             }
 
-            case "0", "EXIT" -> {
+            case "0" -> {
                 System.out.println("");
             }
 
@@ -2000,7 +2001,7 @@ public class Main {
 
     public static void menuUser() throws IOException {
         String pilihan = "a";
-        while (!"0".equals(pilihan) || !"EXIT".equals(pilihan)) {
+        while (!"0".equals(pilihan)) {
             System.out.println("""
                                O========================================O
                                |     Aplikasi Apotek Chemical Farma     |
@@ -2037,7 +2038,7 @@ public class Main {
                         keranjang();
                     }
 
-                    case "0", "EXIT" -> {
+                    case "0" -> {
                         System.out.println("");
                         System.out.println("O========================================O");
                         System.out.println("|         Thank You For Visiting         |");
