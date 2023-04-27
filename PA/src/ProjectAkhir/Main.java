@@ -2021,7 +2021,7 @@ public class Main {
 
             } else {
                 switch (pilihan) {
-                    case "1", "PROFIL" -> {
+                    case "1", "PROFILE" -> {
                         updateProfil();
                     }
 
